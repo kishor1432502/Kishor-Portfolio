@@ -1992,7 +1992,7 @@
 
       <div class="nav-actions">
         <!-- Direct Quick Email Button -->
-        <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Kishor%2C%0A%0A" class="btn btn-outline btn-sm" title="Send Email Directly to Kishor">
+        <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Kishor%2C%0A%0A" onclick="handleEmailClick(event, 'Contact from Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.');" class="btn btn-outline btn-sm" title="Send Email Directly to Kishor">
           <span>✉️ Email Me</span>
         </a>
 
@@ -2018,7 +2018,7 @@
     <li><a href="#education" onclick="toggleMobileMenu()">Education Pathway</a></li>
     <li><a href="#contact" onclick="toggleMobileMenu()">Contact & Email</a></li>
     <li>
-      <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio" style="color:var(--accent-cyan); font-weight:700;">
+      <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio" onclick="handleEmailClick(event, 'Contact from Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.'); toggleMobileMenu();" style="color:var(--accent-cyan); font-weight:700;">
         ✉️ Send Direct Email
       </a>
     </li>
@@ -2066,7 +2066,7 @@
             <span>Download Resume 📥</span>
           </a>
 
-          <a href="mailto:kishorsarasvanan@gmail.com?subject=Opportunity%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." class="btn btn-glow" title="Click to Send Mail to Kishor Directly">
+          <a href="mailto:kishorsarasvanan@gmail.com?subject=Opportunity%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." onclick="handleEmailClick(event, 'Opportunity Inquiry via Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.');" class="btn btn-glow" title="Click to Send Mail to Kishor Directly">
             <span>Email Me ✉️</span>
           </a>
         </div>
@@ -2845,7 +2845,7 @@
           <div class="contact-items">
             <!-- Email Item (Direct Clickable Mailto) -->
             <div class="contact-row">
-              <a href="mailto:kishorsarasvanan@gmail.com?subject=Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" class="contact-row-left" title="Click to Email Kishor Directly">
+              <a href="mailto:kishorsarasvanan@gmail.com?subject=Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" onclick="handleEmailClick(event, 'Inquiry via Portfolio', 'Hi Kishor,\n\nI would like to discuss an opportunity.');" class="contact-row-left" title="Click to Email Kishor Directly">
                 <span class="contact-row-icon">✉️</span>
                 <span>kishorsarasvanan@gmail.com</span>
               </a>
@@ -2888,11 +2888,11 @@
               Choose how you want to send your message:
             </p>
             <div style="display:flex; flex-direction:column; gap:0.6rem;">
-              <a href="mailto:kishorsarasvanan@gmail.com?subject=Internship%20/%20Project%20Opportunity&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss..." class="btn btn-primary btn-sm" style="width:100%;">
-                <span>✉️ Open Default Mail App</span>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=Internship%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width:100%;">
+                <span>🌐 Open Directly in Gmail (Web)</span>
               </a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=Internship%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" target="_blank" class="btn btn-outline btn-sm" style="width:100%;">
-                <span>🌐 Compose Directly in Gmail (Web)</span>
+              <a href="mailto:kishorsarasvanan@gmail.com?subject=Internship%20/%20Project%20Opportunity&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss..." onclick="handleEmailClick(event, 'Internship / Project Opportunity', 'Hi Kishor,\n\nI reviewed your portfolio and would like to discuss an internship or project opportunity.');" class="btn btn-outline btn-sm" style="width:100%;">
+                <span>✉️ Open Default Mail App</span>
               </a>
             </div>
           </div>
@@ -3606,25 +3606,146 @@
       });
     }
 
-    // 11. Direct Form Submit to Mailto
+    // 11. HTML ESCAPER HELPER
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // 12. UNIVERSAL EMAIL MODAL & LAUNCHER (100% WORKS ON DEPLOYED HTTPS)
+    function openEmailModal(subject, body, senderName, senderEmail) {
+      const sub = subject || 'Opportunity Inquiry via Portfolio';
+      const txt = body || 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.';
+      const encSub = encodeURIComponent(sub);
+      const encBody = encodeURIComponent(txt);
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=${encSub}&body=${encBody}`;
+      const mailtoUrl = `mailto:kishorsarasvanan@gmail.com?subject=${encSub}&body=${encBody}`;
+      const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=kishorsarasvanan@gmail.com&subject=${encSub}&body=${encBody}`;
+
+      const html = `
+        <div style="padding: 0.2rem 0;">
+          <div style="display:flex; align-items:center; gap:0.9rem; margin-bottom:1.3rem;">
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(0, 255, 170, 0.12); border:1px solid var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.6rem; flex-shrink:0;">
+              ✉️
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; color:var(--text-main); margin:0;">
+                Send Direct Email
+              </h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; margin:0.25rem 0 0 0;">
+                To: <strong style="color:var(--accent-cyan);">kishorsarasvanan@gmail.com</strong>
+              </p>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-glass); border-radius:14px; padding:1rem 1.2rem; margin-bottom:1.4rem;">
+            <div style="color:var(--text-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; margin-bottom:0.3rem;">Subject</div>
+            <div style="color:var(--text-main); font-weight:600; font-size:0.95rem; margin-bottom:0.75rem;">${escapeHtml(sub)}</div>
+            <div style="color:var(--text-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; margin-bottom:0.3rem;">Message</div>
+            <div style="color:var(--text-muted); font-size:0.84rem; max-height:120px; overflow-y:auto; white-space:pre-wrap; line-height:1.55; font-family:var(--font-mono); background:rgba(0,0,0,0.3); padding:0.7rem 0.9rem; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">${escapeHtml(txt)}</div>
+          </div>
+
+          <p style="color:var(--text-main); font-size:0.9rem; margin-bottom:0.85rem; font-weight:700;">
+            ⚡ Choose how you want to send:
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <!-- Option 1: Gmail Web (100% Reliable everywhere without installed apps) -->
+            <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:space-between; padding:0.9rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">🌐</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open in Gmail (Web Browser)</div>
+                  <div style="font-size:0.75rem; opacity:0.85; font-weight:normal;">1-Click Instant Compose in Chrome/Edge/Mobile</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem; font-weight:bold;">↗</span>
+            </a>
+
+            <!-- Option 2: Default System Mail Client -->
+            <a href="${mailtoUrl}" class="btn btn-outline" style="justify-content:space-between; padding:0.85rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">✉️</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open Default Mail App</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">Outlook, Apple Mail, Thunderbird, Windows Mail</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem;">↗</span>
+            </a>
+
+            <!-- Option 3: Outlook / Hotmail Web -->
+            <a href="${outlookUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="justify-content:space-between; padding:0.85rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">📮</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open in Outlook / Hotmail (Web)</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">Microsoft 365 / Live.com webmail</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem;">↗</span>
+            </a>
+
+            <!-- Option 4: Copy Email -->
+            <button onclick="copyToClipboard('kishorsarasvanan@gmail.com', 'Email copied: kishorsarasvanan@gmail.com');" class="btn" style="background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); justify-content:space-between; padding:0.85rem 1.2rem; color:var(--text-main); cursor:pointer;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">📋</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Copy Email Address</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">kishorsarasvanan@gmail.com</div>
+                </div>
+              </div>
+              <span style="font-size:0.85rem; color:var(--accent-cyan); font-weight:700;">Copy 📋</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalBody').innerHTML = html;
+      document.getElementById('modalBackdrop').classList.add('active');
+    }
+
+    // Direct Handler for Email Clicks
+    function handleEmailClick(e, subject, body) {
+      if (e) {
+        e.preventDefault();
+      }
+      openEmailModal(subject, body);
+    }
+
+    // 13. Direct Form Submit to Mail & Modal
     function handleFormSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('formName').value;
-      const email = document.getElementById('formEmail').value;
-      const subject = document.getElementById('formSubject').value;
-      const msg = document.getElementById('formMessage').value;
+      const name = document.getElementById('formName').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const subject = document.getElementById('formSubject').value.trim() || 'Portfolio Inquiry';
+      const msg = document.getElementById('formMessage').value.trim();
 
-      showToast(`Opening mail client to send message to Kishor S...`);
+      const fullBody = `From: ${name} (${email})\n\nMessage:\n${msg}`;
 
-      const mailtoUrl = `mailto:kishorsarasvanan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")
+      showToast(`Preparing email to Kishor S...`);
 
-Message:
-" + msg)}`;
+      // 1. Immediately open Gmail compose in a new tab (Synchronous with user click, passes popup blocker)
+      const encSub = encodeURIComponent(subject);
+      const encBody = encodeURIComponent(fullBody);
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=${encSub}&body=${encBody}`;
 
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-      }, 700);
+      try {
+        window.open(gmailUrl, '_blank');
+      } catch (err) {
+        console.warn('Direct popup prevented, opening launcher modal', err);
+      }
 
+      // 2. Open the comprehensive Email Modal so user has all options ready
+      openEmailModal(subject, fullBody, name, email);
+
+      // 3. Reset form
       document.getElementById('contactForm').reset();
     }
 
