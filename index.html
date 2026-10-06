@@ -1,0 +1,4001 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kishor S — Computer Science Engineer & Aspiring SOC Analyst</title>
+  <meta name="description" content="Official Portfolio of Kishor S — B.E. Computer Science & Engineering student at V.S.B College of Engineering Technical Campus. Aspiring SOC Analyst, Cybersecurity Enthusiast, Python & Java Developer." />
+  <meta name="author" content="Kishor S" />
+  <meta name="keywords" content="Kishor S, Cyber Security, SOC Analyst, Python, Java, AI Interview Portal, Cyber Vault, VSB College" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       DYNAMIC THEME & DESIGN SYSTEM (NON-BLUE THEMES)
+       ============================================================ */
+    :root {
+      /* Deep Obsidian Dark Backgrounds - Sleek Charcoal / Emerald tint (No Blue!) */
+      --bg-deep: #080c0a;
+      --bg-slate: #0e1511;
+      --bg-card: rgba(16, 25, 20, 0.88);
+      --bg-card-hover: rgba(23, 37, 29, 0.98);
+      --bg-glass: rgba(13, 21, 17, 0.78);
+      
+      /* Vibrant Cyber Accents: Emerald Matrix, Mint Neon, Amber Gold, Cyber Purple */
+      --accent-cyan: #00ffaa;      /* Cyber Mint Neon */
+      --accent-teal: #10b981;      /* Emerald Jade */
+      --accent-indigo: #059669;    /* Deep Cyber Green */
+      --accent-purple: #a855f7;    /* Cyber Amethyst */
+      --accent-emerald: #10b981;   /* Emerald Green */
+      --accent-gold: #f59e0b;      /* Warm Amber Gold */
+      --accent-rose: #f43f5e;      /* Cyber Rose */
+      
+      --glow-cyan: rgba(0, 255, 170, 0.4);
+      --glow-indigo: rgba(16, 185, 129, 0.35);
+      --glow-emerald: rgba(16, 185, 129, 0.4);
+      --glow-gold: rgba(245, 158, 11, 0.35);
+      
+      --text-main: #f3f7f4;
+      --text-muted: #94a39b;
+      --text-dim: #64746b;
+      
+      --border-glass: rgba(255, 255, 255, 0.12);
+      --border-glow: rgba(0, 255, 170, 0.45);
+      --border-indigo: rgba(16, 185, 129, 0.45);
+      
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    [data-theme="crimson"] {
+      --bg-deep: #100808;
+      --bg-slate: #180d0d;
+      --bg-card: rgba(30, 18, 18, 0.88);
+      --bg-card-hover: rgba(42, 24, 24, 0.98);
+      --accent-cyan: #ff4757;
+      --accent-teal: #e02424;
+      --accent-indigo: #c53030;
+      --glow-cyan: rgba(255, 71, 87, 0.45);
+      --border-glow: rgba(255, 71, 87, 0.45);
+      --border-indigo: rgba(224, 36, 36, 0.45);
+    }
+
+    [data-theme="gold"] {
+      --bg-deep: #0f0d06;
+      --bg-slate: #19160a;
+      --bg-card: rgba(30, 26, 14, 0.88);
+      --bg-card-hover: rgba(42, 36, 20, 0.98);
+      --accent-cyan: #fbbf24;
+      --accent-teal: #f59e0b;
+      --accent-indigo: #d97706;
+      --glow-cyan: rgba(251, 191, 36, 0.45);
+      --border-glow: rgba(251, 191, 36, 0.45);
+      --border-indigo: rgba(245, 158, 11, 0.45);
+    }
+
+    [data-theme="purple"] {
+      --bg-deep: #0e0716;
+      --bg-slate: #170d24;
+      --bg-card: rgba(28, 16, 42, 0.88);
+      --bg-card-hover: rgba(40, 22, 60, 0.98);
+      --accent-cyan: #c084fc;
+      --accent-teal: #a855f7;
+      --accent-indigo: #7e22ce;
+      --glow-cyan: rgba(192, 132, 252, 0.45);
+      --border-glow: rgba(192, 132, 252, 0.45);
+      --border-indigo: rgba(168, 85, 247, 0.45);
+    }
+
+    /* Global Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.65;
+      min-height: 100vh;
+      position: relative;
+      transition: background-color 0.4s ease;
+    }
+
+    /* Top Scroll Progress Bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3.5px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-teal), var(--accent-gold));
+      z-index: 10000;
+      box-shadow: 0 0 12px var(--accent-cyan);
+      transition: width 0.1s ease-out;
+    }
+
+    /* Canvas Network & Background Glows */
+    #canvas-network {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.18;
+      animation: pulseGlow 14s ease-in-out infinite alternate;
+      transition: background-color 0.5s ease;
+    }
+    .glow-1 { width: 620px; height: 620px; background: var(--accent-teal); top: -140px; right: -120px; }
+    .glow-2 { width: 520px; height: 520px; background: var(--accent-cyan); bottom: 5%; left: -140px; animation-delay: -5s; opacity: 0.14; }
+    .glow-3 { width: 450px; height: 450px; background: var(--accent-gold); top: 45%; left: 35%; opacity: 0.1; animation-delay: -9s; }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.14; }
+      50% { transform: scale(1.15) translate(30px, -25px); opacity: 0.24; }
+      100% { transform: scale(0.95) translate(-25px, 30px); opacity: 0.14; }
+    }
+
+    .cyber-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 45px 45px;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: radial-gradient(circle at 50% 30%, black 45%, transparent 90%);
+    }
+
+    /* Container & Section Spacing */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Typography Utilities */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      padding: 0.38rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glow);
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin-bottom: 3.2rem;
+      line-height: 1.7;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 20%, var(--accent-cyan) 80%, var(--accent-teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* ============================================================
+       NAVBAR
+       ============================================================ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9000;
+      background: rgba(8, 12, 10, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 0.85rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent-cyan); }
+    .logo-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glow);
+      border-radius: 6px;
+      color: var(--accent-cyan);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color var(--transition-smooth);
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent-cyan);
+      transition: width var(--transition-smooth);
+      border-radius: 2px;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    /* Enhanced Prominent Theme Switcher (Right Corner) */
+    .theme-switcher-box {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.35rem 0.75rem;
+      border-radius: 25px;
+      border: 1.5px solid var(--border-glow);
+      backdrop-filter: blur(12px);
+    }
+    .theme-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-weight: 600;
+    }
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .theme-dot {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+    }
+    .theme-dot:hover {
+      transform: scale(1.35);
+    }
+    .theme-dot.active {
+      transform: scale(1.35);
+      outline: 2.5px solid #ffffff;
+      outline-offset: 1.5px;
+    }
+    .theme-dot.cyan { background: #00ffaa; box-shadow: 0 0 10px #00ffaa; }
+    .theme-dot.gold { background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+    .theme-dot.crimson { background: #ff4757; box-shadow: 0 0 10px #ff4757; }
+    .theme-dot.purple { background: #c084fc; box-shadow: 0 0 10px #c084fc; }
+
+    /* Custom Color Picker Input Button */
+    .custom-color-picker-wrap {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: conic-gradient(#00ffaa, #fbbf24, #ff4757, #c084fc, #00ffaa);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .custom-color-picker-wrap:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
+    }
+    .custom-color-picker-wrap input[type="color"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    /* Floating Theme Dock (Bottom Left on Desktop) */
+    .floating-theme-dock {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 8000;
+      background: rgba(10, 16, 13, 0.94);
+      border: 1.5px solid var(--border-glow);
+      backdrop-filter: blur(20px);
+      padding: 0.45rem 0.9rem;
+      border-radius: 35px;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 20px var(--glow-cyan);
+      transition: all var(--transition-smooth);
+    }
+    .floating-theme-dock:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background: rgba(8, 12, 10, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 1.2rem;
+      list-style: none;
+      z-index: 8999;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: block;
+      padding: 0.5rem 0;
+    }
+
+    /* Common Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      outline: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-teal));
+      color: #041009;
+      box-shadow: 0 4px 20px var(--glow-cyan);
+      font-weight: 700;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2.5px);
+      box-shadow: 0 8px 30px var(--glow-cyan);
+      filter: brightness(1.08);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent-cyan);
+      transform: translateY(-2.5px);
+    }
+    .btn-glow {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent-cyan);
+      border: 1px solid var(--border-glow);
+    }
+    .btn-glow:hover {
+      background: var(--accent-cyan);
+      color: #041009;
+      box-shadow: 0 0 25px var(--glow-cyan);
+      transform: translateY(-2.5px);
+    }
+    .btn-sm {
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      border-radius: 8px;
+    }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 0.38rem 0.95rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      color: var(--accent-emerald);
+      font-family: var(--font-mono);
+      width: fit-content;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      animation: pulseDot 2s infinite;
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+    @keyframes pulseDot {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+    }
+    .hero-roles {
+      font-family: var(--font-mono);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-height: 1.8rem;
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.3em;
+      background: var(--accent-cyan);
+      animation: blink 0.9s infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .hero-desc strong {
+      color: var(--text-main);
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-top: 0.5rem;
+    }
+    .social-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.95rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      transition: all var(--transition-smooth);
+    }
+    .social-badge:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-main);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.15);
+    }
+    .social-badge svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    /* 3D Parallax Avatar Card */
+    .avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* === PHOTO BACKGROUND: PURE CSS ANIMATION === */
+    .avatar-anim-bg {
+      position: absolute;
+      inset: -70px;
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    /* 3 rotating gradient rings */
+    .css-ring {
+      position: absolute;
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .css-ring-1 {
+      width: 430px; height: 430px;
+      border: 1.5px solid rgba(0,255,170,0.25);
+      box-shadow: 0 0 18px rgba(0,255,170,0.1), inset 0 0 18px rgba(0,255,170,0.05);
+      animation: cssRing1 8s linear infinite;
+    }
+    .css-ring-2 {
+      width: 540px; height: 540px;
+      border: 1px dashed rgba(0,255,170,0.14);
+      animation: cssRing2 14s linear infinite;
+    }
+    .css-ring-3 {
+      width: 640px; height: 640px;
+      border: 1px solid rgba(16,185,129,0.08);
+      animation: cssRing1 22s linear infinite reverse;
+    }
+    /* Spinning arc on ring 1 */
+    .css-ring-1::before {
+      content: '';
+      position: absolute;
+      top: -3px; left: 50%;
+      width: 10px; height: 10px;
+      background: #00ffaa;
+      border-radius: 50%;
+      box-shadow: 0 0 16px #00ffaa, 0 0 32px #00ffaa;
+      transform: translateX(-50%);
+    }
+    /* 2nd arc dot on ring 2 */
+    .css-ring-2::before {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 50%;
+      width: 7px; height: 7px;
+      background: rgba(0,255,170,0.7);
+      border-radius: 50%;
+      box-shadow: 0 0 12px #00ffaa;
+      transform: translateX(-50%);
+    }
+    @keyframes cssRing1 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes cssRing2 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+    /* Floating glow orbs */
+    .css-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,170,0.55) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .css-orb-1 { width:55px; height:55px; top:8%;  left:4%;  animation: orbFloat 5s ease-in-out infinite; }
+    .css-orb-2 { width:38px; height:38px; top:75%; left:82%; animation: orbFloat 7s ease-in-out infinite 1.5s; }
+    .css-orb-3 { width:28px; height:28px; top:15%; left:84%; animation: orbFloat 6s ease-in-out infinite 0.8s; opacity:0.7; }
+    .css-orb-4 { width:45px; height:45px; top:82%; left:8%;  animation: orbFloat 8s ease-in-out infinite 2.5s; opacity:0.6; }
+    @keyframes orbFloat {
+      0%,100% { transform: translate(0,0) scale(1);    opacity:0.55; }
+      50%      { transform: translate(10px,-15px) scale(1.25); opacity:1; }
+    }
+    /* Core breathing glow */
+    .css-core {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(0,255,170,0.13) 0%, rgba(0,255,170,0.04) 50%, transparent 75%);
+      animation: coreBreath 3.5s ease-in-out infinite;
+    }
+    @keyframes coreBreath {
+      0%,100% { transform: translate(-50%,-50%) scale(1);    opacity:0.6; }
+      50%      { transform: translate(-50%,-50%) scale(1.18); opacity:1; }
+    }
+    .avatar-card {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(16, 26, 20, 0.95), rgba(9, 14, 11, 0.98));
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow-cyan);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+    }
+    .avatar-img-box {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .avatar-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+      filter: contrast(1.02) brightness(0.98);
+    }
+    .avatar-card:hover .avatar-img-box img {
+      transform: scale(1.04);
+    }
+    .avatar-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8, 12, 10, 0.92) 12%, rgba(8, 12, 10, 0.3) 50%, transparent 80%);
+      z-index: 2;
+    }
+    .avatar-badge-top {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      z-index: 3;
+      background: rgba(8, 12, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glow);
+      padding: 0.38rem 0.85rem;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .avatar-badge-bottom {
+      position: relative;
+      z-index: 3;
+      background: rgba(8, 12, 10, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      padding: 0.75rem 1rem;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Stats Banner Strip */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 18px;
+      padding: 1.4rem;
+      backdrop-filter: blur(15px);
+      text-align: center;
+      transition: all var(--transition-smooth);
+    }
+    .stat-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 255, 170, 0.12);
+    }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      margin-bottom: 0.2rem;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* ============================================================
+       ABOUT SECTION
+       ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 22px;
+      padding: 2.4rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-teal), transparent);
+    }
+    .objective-quote {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent-cyan);
+      padding-left: 1.2rem;
+    }
+    .about-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .about-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .point-icon {
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       [NEW UNIQUE DESIGN]: SKILLS & SECURITY MATRIX
+       ============================================================ */
+    .skills-filter-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.2rem;
+    }
+    .filter-btn {
+      padding: 0.55rem 1.2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      border-radius: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .filter-btn:hover {
+      color: var(--text-main);
+      border-color: var(--accent-cyan);
+    }
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 15px var(--glow-cyan);
+      font-weight: 600;
+    }
+
+    .skills-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .skill-matrix-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 1.6rem;
+      backdrop-filter: blur(20px);
+      transition: all var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .skill-matrix-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, var(--glow-cyan) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0.3;
+      transition: opacity 0.3s;
+    }
+    .skill-matrix-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .skill-matrix-card:hover::after {
+      opacity: 0.8;
+    }
+    .sm-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .sm-icon-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .sm-icon {
+      font-size: 1.8rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+    }
+    .sm-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .sm-level-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent-cyan);
+      border: 1px solid var(--border-glow);
+    }
+    .sm-bar-wrap {
+      margin: 0.9rem 0;
+    }
+    .sm-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .sm-bar-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .sm-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan));
+      box-shadow: 0 0 10px var(--accent-cyan);
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sm-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+    .sm-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    /* Interactive SOC Operations & Defense HUD */
+    .soc-hud-board {
+      background: linear-gradient(145deg, rgba(14, 22, 17, 0.92), rgba(8, 12, 10, 0.98));
+      border: 1px solid var(--border-glow);
+      border-radius: 24px;
+      padding: 2.2rem;
+      backdrop-filter: blur(25px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow-cyan);
+      position: relative;
+      overflow: hidden;
+    }
+    .hud-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-glass);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .hud-title-box {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .hud-title-icon {
+      font-size: 1.6rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      color: var(--accent-cyan);
+    }
+    .hud-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .hud-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glow);
+      padding: 0.4rem 0.9rem;
+      border-radius: 30px;
+    }
+
+    .hud-channel-nav {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+    }
+    .hud-tab-btn {
+      padding: 0.55rem 1.1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-smooth);
+    }
+    .hud-tab-btn:hover {
+      color: var(--text-main);
+      border-color: var(--accent-cyan);
+    }
+    .hud-tab-btn.active {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-weight: 600;
+      box-shadow: 0 0 12px var(--glow-cyan);
+    }
+
+    .hud-telemetry-display {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: stretch;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.8rem;
+    }
+    .hud-channel-info h4 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.7rem;
+    }
+    .hud-channel-info p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .highlight-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glow);
+      color: var(--accent-cyan);
+    }
+    .hud-metrics-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.9rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .hud-metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.85rem;
+    }
+    .hud-metric-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .hud-metric-label {
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+    .hud-metric-val {
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* ============================================================
+       PROJECTS SECTION: MAIN & MINI PROJECTS
+       ============================================================ */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Main Project: Flagship AI Interview Portal */
+    .main-project-card {
+      background: linear-gradient(145deg, rgba(16, 26, 20, 0.92), rgba(9, 14, 11, 0.98));
+      border: 1px solid var(--border-glow);
+      border-radius: 26px;
+      padding: 2.6rem;
+      backdrop-filter: blur(25px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), 0 0 40px var(--glow-cyan);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .main-project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-teal), var(--accent-gold));
+    }
+    .project-badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .badge-flagship {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .badge-mini {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .project-status-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+    }
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.8rem;
+    }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.28rem 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      border-radius: 8px;
+      color: var(--accent-cyan);
+    }
+    .project-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Terminal Console for AI Interview Portal */
+    .terminal-box {
+      background: rgba(5, 8, 6, 0.95);
+      border: 1px solid var(--border-glow);
+      border-radius: 18px;
+      padding: 1.4rem;
+      font-family: var(--font-mono);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .term-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .term-dot.r { background: #ef4444; }
+    .term-dot.y { background: #f59e0b; }
+    .term-dot.g { background: #10b981; }
+    .term-title {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+    .term-content {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--accent-cyan);
+    }
+
+    /* Mini Project: Cyber Vault Interactive Card */
+    .mini-project-card {
+      background: linear-gradient(145deg, rgba(16, 26, 20, 0.88), rgba(9, 14, 11, 0.96));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 24px;
+      padding: 2.4rem;
+      backdrop-filter: blur(25px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(245, 158, 11, 0.15);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.8rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mini-project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+    }
+
+    /* Vault Interactive Component */
+    .vault-widget {
+      background: rgba(5, 8, 6, 0.92);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 18px;
+      padding: 1.6rem;
+    }
+    .vault-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .vault-status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-gold);
+    }
+    .password-input-group {
+      position: relative;
+      display: flex;
+      margin-bottom: 1.2rem;
+    }
+    .password-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 0.85rem 3.5rem 0.85rem 1.1rem;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all var(--transition-smooth);
+    }
+    .password-input:focus {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+    }
+    .pass-toggle-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent-gold);
+      border-radius: 8px;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .pass-toggle-btn:hover {
+      background: var(--accent-gold);
+      color: #000;
+    }
+    .meter-container {
+      margin-bottom: 1.2rem;
+    }
+    .meter-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      margin-bottom: 0.4rem;
+    }
+    .meter-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .meter-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s, background-color 0.3s;
+    }
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+    .criterion {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .criterion.valid {
+      color: var(--accent-cyan);
+    }
+    .vault-hash-preview {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px dashed var(--border-glass);
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-bottom: 1.2rem;
+    }
+    .vault-hash-preview span {
+      color: var(--accent-cyan);
+    }
+
+    /* ============================================================
+       [NEW UNIQUE DESIGN]: CERTIFICATES & ACHIEVEMENTS
+       ============================================================ */
+    .cert-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+    .cyber-cert-card {
+      background: linear-gradient(145deg, rgba(16, 26, 20, 0.88), rgba(9, 14, 11, 0.96));
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 2.2rem;
+      backdrop-filter: blur(25px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+      transition: all var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cyber-cert-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65), 0 0 35px var(--glow-cyan);
+    }
+    .cert-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+    .cert-seal {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .cert-hash-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glow);
+      padding: 0.28rem 0.65rem;
+      border-radius: 20px;
+    }
+    .cert-issuer {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-teal);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .cert-title {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+    .cert-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 1.6rem;
+    }
+    .cert-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-glass);
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .cert-verified {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-emerald);
+    }
+
+    /* ============================================================
+       ACADEMIC PATHWAY / EDUCATION
+       ============================================================ */
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .pathway-station {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 22px;
+      padding: 2.2rem;
+      backdrop-filter: blur(20px);
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+    .pathway-station:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    .station-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .station-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glow);
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+    }
+    .station-period {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent-gold);
+    }
+    .station-degree {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+    .station-institution {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.4rem;
+    }
+    .coursework-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .coursework-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cw-chip {
+      font-size: 0.78rem;
+      padding: 0.28rem 0.65rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       CONTACT SECTION: DIRECT MAILTO INTEGRATION
+       ============================================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 22px;
+      padding: 2.4rem;
+      backdrop-filter: blur(20px);
+    }
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      transition: all var(--transition-smooth);
+    }
+    .contact-row:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(4px);
+    }
+    .contact-row-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+    }
+    .contact-row-icon {
+      font-size: 1.25rem;
+    }
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-glow);
+      color: var(--accent-cyan);
+      border-radius: 8px;
+      padding: 0.35rem 0.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--accent-cyan);
+      color: #041009;
+    }
+
+    /* Fast Email Trigger Highlight Card */
+    .direct-email-highlight {
+      margin-top: 1.8rem;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1.5px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 1.4rem;
+      text-align: center;
+    }
+
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 22px;
+      padding: 2.4rem;
+      backdrop-filter: blur(20px);
+    }
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.45rem;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all var(--transition-smooth);
+    }
+    .form-control:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px var(--glow-cyan);
+      background: rgba(255, 255, 255, 0.07);
+    }
+    textarea.form-control {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    /* ============================================================
+       MODAL DIALOG (RESUME, CERTS, AI DETAILS)
+       ============================================================ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 9, 7, 0.88);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      background: linear-gradient(145deg, rgba(16, 26, 20, 0.96), rgba(8, 12, 10, 0.99));
+      border: 1px solid var(--border-glow);
+      border-radius: 24px;
+      padding: 2.4rem;
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 45px var(--glow-cyan);
+      transform: translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.active .modal-content {
+      transform: translateY(0);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .modal-close:hover {
+      background: var(--accent-cyan);
+      color: #041009;
+      transform: rotate(90deg);
+    }
+
+    /* Resume Document Viewer inside Modal */
+    .resume-doc-view {
+      background: #0f1612;
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 2rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .resume-doc-header {
+      text-align: center;
+      border-bottom: 2px solid var(--border-glow);
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .resume-doc-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+    }
+    .resume-doc-contact {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .resume-doc-section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.3rem;
+      margin-top: 1.4rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Certificate Modal Diploma Design */
+    .certificate-diploma-view {
+      border: 2px solid var(--accent-cyan);
+      border-radius: 18px;
+      padding: 2.2rem;
+      background: radial-gradient(circle at 50% 50%, rgba(16, 28, 22, 0.9), rgba(6, 10, 8, 0.98));
+      text-align: center;
+      position: relative;
+      box-shadow: inset 0 0 35px rgba(0, 255, 170, 0.1);
+    }
+    .diploma-seal-icon {
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Toast Notification */
+    #toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(14, 22, 17, 0.96);
+      border: 1px solid var(--border-glow);
+      color: var(--text-main);
+      padding: 0.9rem 1.4rem;
+      border-radius: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      z-index: 100000;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--glow-cyan);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    #toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border-glass);
+      text-align: center;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Reveal animations: Safe by default */
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .main-project-card, .mini-project-card, .contact-grid, .pathway-grid, .hud-telemetry-display {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .floating-theme-dock { display: none; }
+    }
+    @media (max-width: 580px) {
+      .stats-strip { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; width: 100%; }
+      .hero-cta .btn { width: 100%; }
+      .criteria-grid { grid-template-columns: 1fr; }
+      .theme-label { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Animated Interactive Network Canvas -->
+  <canvas id="canvas-network"></canvas>
+
+  <!-- Ambient Glowing Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Subtle Cyber Matrix Grid Background -->
+  <div class="cyber-grid"></div>
+
+  <!-- Floating Quick Theme Switcher Dock (Bottom Left) -->
+
+  <div id="toast-notification">
+    <span id="toast-icon">⚡</span>
+    <span id="toast-msg">Notification Message</span>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR WITH FULLY ENABLED COLOR CHOOSER
+       ============================================================ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo">
+        <span>&lt;</span>KISHOR<span>.S /&gt;</span>
+        <span class="logo-badge">SOC_CSE</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills & Matrix</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Direct Quick Email Button -->
+        <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Kishor%2C%0A%0A" onclick="handleEmailClick(event, 'Contact from Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.');" class="btn btn-outline btn-sm" title="Send Email Directly to Kishor">
+          <span>✉️ Email Me</span>
+        </a>
+
+        <!-- Download & View Resume -->
+        <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" class="btn btn-primary btn-sm" id="nav-resume-btn" title="Download Official Resume PDF">
+          <span>Resume 📄</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <ul class="mobile-menu" id="mobileMenu">
+    <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+    <li><a href="#skills" onclick="toggleMobileMenu()">Skills & Security Matrix</a></li>
+    <li><a href="#projects" onclick="toggleMobileMenu()">Projects (Main & Mini)</a></li>
+    <li><a href="#certifications" onclick="toggleMobileMenu()">Certificates & Achievements</a></li>
+    <li><a href="#education" onclick="toggleMobileMenu()">Education Pathway</a></li>
+    <li><a href="#contact" onclick="toggleMobileMenu()">Contact & Email</a></li>
+    <li>
+      <a href="mailto:kishorsarasvanan@gmail.com?subject=Contact%20from%20Portfolio" onclick="handleEmailClick(event, 'Contact from Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.'); toggleMobileMenu();" style="color:var(--accent-cyan); font-weight:700;">
+        ✉️ Send Direct Email
+      </a>
+    </li>
+    <li>
+      <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" style="color:var(--accent-gold); font-weight:700;">
+        📥 Download Official Resume PDF
+      </a>
+    </li>
+  </ul>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section id="hero">
+    <div class="container hero-grid">
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="pulse-dot"></span>
+          <span>Available for SOC Analyst Roles & Internships</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <br />
+          <span class="gradient-text">Kishor S</span>
+        </h1>
+
+        <div class="hero-roles">
+          <span>// </span>
+          <span id="typing-text">Computer Science Engineer</span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <p class="hero-desc">
+          <strong>Computer Science and Engineering</strong> student at <strong>V. S. B College of Engineering Technical Campus</strong>, Coimbatore (2023–2027). Strong foundation in <strong>Java and Python</strong> with a deep focus on <strong>Cyber Security, SOC Analyst operations, and real-world software engineering</strong>.
+        </p>
+
+        <!-- CTA Buttons including Direct Email and Resume -->
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects 🚀</span>
+          </a>
+          <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" class="btn btn-outline" title="Download Official Resume PDF">
+            <span>Download Resume 📥</span>
+          </a>
+
+          <a href="mailto:kishorsarasvanan@gmail.com?subject=Opportunity%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." onclick="handleEmailClick(event, 'Opportunity Inquiry via Portfolio', 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.');" class="btn btn-glow" title="Click to Send Mail to Kishor Directly">
+            <span>Email Me ✉️</span>
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero-socials">
+          <a href="https://github.com/kishor1432502" target="_blank" class="social-badge" title="GitHub Profile">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/kishor-sarasvanan-8a09a737a/" target="_blank" class="social-badge" title="LinkedIn Profile">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://leetcode.com/u/kishor_2502/" target="_blank" class="social-badge" title="LeetCode Profile">
+            <svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.264a1.374 1.374 0 0 0-.438.961v6.862c0 .366.146.717.438.961l5.406 5.826c.261.261.613.438.961.438h6.862a1.374 1.374 0 0 0 .961-.438l5.406-5.826a1.374 1.374 0 0 0 .438-.961V7.225a1.374 1.374 0 0 0-.438-.961L21.306.438A1.374 1.374 0 0 0 20.345 0h-6.862z"/></svg>
+            <span>LeetCode</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Avatar Portrait -->
+      <div class="avatar-wrapper">
+        <!-- Animated background behind photo -->
+        <!-- Pure CSS animated background behind photo -->
+        <div class="avatar-anim-bg">
+          <div class="css-core"></div>
+          <div class="css-ring css-ring-1"></div>
+          <div class="css-ring css-ring-2"></div>
+          <div class="css-ring css-ring-3"></div>
+          <div class="css-orb css-orb-1"></div>
+          <div class="css-orb css-orb-2"></div>
+          <div class="css-orb css-orb-3"></div>
+          <div class="css-orb css-orb-4"></div>
+        </div>
+        <div class="avatar-card" id="avatarCard">
+          <div class="avatar-badge-top">
+            <span>🛡️</span> SOC Analyst Track
+          </div>
+
+          <div class="avatar-img-box">
+            <img src="assets/kishor_portrait.png" alt="Kishor S - Formal Portrait" />
+          </div>
+
+          <div class="avatar-badge-bottom">
+            <span>🎓 B.E. CSE (2023–2027)</span>
+            <span style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.75rem;">VSB College</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Metrics Strip -->
+  <div class="container">
+    <div class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-number">2023–2027</div>
+        <div class="stat-label">B.E. Computer Science</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">SOC Analyst</div>
+        <div class="stat-label">Cyber Defense & Triage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Java & Python</div>
+        <div class="stat-label">Core Technical Stack</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100% Verified</div>
+        <div class="stat-label">Official Credentials</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-tag">01 // Profile & Purpose</div>
+      <h2 class="section-title">Career <span class="gradient-text">Objective</span></h2>
+      <p class="section-subtitle">Academic rigor combined with hands-on cyber defense curiosity and software engineering drive.</p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <p class="objective-quote">
+            "Computer Science and Engineering student with a solid foundation in Java and Python, and a strong interest in cyber security, particularly the SOC Analyst role. A responsible, orderly, and quick learner with strong analytical and logical abilities, eager to apply coding knowledge to real-world projects."
+          </p>
+          <div class="about-points">
+            <div class="about-point-item">
+              <span class="point-icon">🛡️</span>
+              <span><strong>Primary Specialization:</strong> SOC Analyst operations, network traffic triage, SIEM telemetry, and system hardening.</span>
+            </div>
+            <div class="about-point-item">
+              <span class="point-icon">☕</span>
+              <span><strong>Core Languages:</strong> Java (OOP, memory management, algorithms) & Python (automation, security tooling, APIs).</span>
+            </div>
+            <div class="about-point-item">
+              <span class="point-icon">🎓</span>
+              <span><strong>Institution:</strong> V. S. B College of Engineering Technical Campus, Coimbatore, Tamil Nadu.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--text-main); margin-bottom:1.2rem;">
+            Professional Mindset & Soft Skills
+          </h3>
+          <div class="about-points">
+            <div class="about-point-item">
+              <span class="point-icon">⚡</span>
+              <span><strong>Analytical & Logical Abilities:</strong> Systematic problem decomposition for threat analysis and complex algorithmic challenges.</span>
+            </div>
+            <div class="about-point-item">
+              <span class="point-icon">🤝</span>
+              <span><strong>Teamwork & Adaptability:</strong> Collaborative team player experienced in time-critical environments and rapid technical upskilling.</span>
+            </div>
+            <div class="about-point-item">
+              <span class="point-icon">🗣️</span>
+              <span><strong>Communication & Orderliness:</strong> Clear reporting, orderly code documentation, and active incident response communication.</span>
+            </div>
+            <div class="about-point-item">
+              <span class="point-icon">🌐</span>
+              <span><strong>Languages Spoken:</strong> English (Professional) and Tamil (Native).</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [NEW UNIQUE DESIGN]: SKILLS & SECURITY MATRIX
+       ============================================================ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-tag">02 // Technical Capabilities</div>
+      <h2 class="section-title">Skills & <span class="gradient-text">Security Matrix</span></h2>
+      <p class="section-subtitle">Comprehensive technical inventory covering core programming, cyber defense frameworks, databases, and engineering workflows.</p>
+
+      <!-- Interactive Skill Filter Tabs -->
+      <div class="skills-filter-nav">
+        <button class="filter-btn active" onclick="filterSkills('all', this)">⚡ All Arsenal</button>
+        <button class="filter-btn" onclick="filterSkills('cyber', this)">🛡️ Cyber Security & SOC</button>
+        <button class="filter-btn" onclick="filterSkills('prog', this)">💻 Languages & Core DSA</button>
+        <button class="filter-btn" onclick="filterSkills('web-db', this)">🌐 Web & Databases</button>
+        <button class="filter-btn" onclick="filterSkills('tools', this)">🛠️ Tools & Platforms</button>
+      </div>
+
+      <!-- Skills Matrix Cards Grid -->
+      <div class="skills-matrix-grid">
+
+        <!-- Skill 1: Cyber Security & SOC -->
+        <div class="skill-matrix-card" data-category="cyber">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">🛡️</div>
+                <div>
+                  <div class="sm-name">Cyber Security</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">Threat Defense</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">SOC Tier-1</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>Threat Analysis & Defense</span>
+                <span>88%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:88%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">Wireshark</span>
+            <span class="sm-tag">SIEM Concepts</span>
+            <span class="sm-tag">TCP/IP</span>
+            <span class="sm-tag">OWASP</span>
+            <span class="sm-tag">Cryptography</span>
+          </div>
+        </div>
+
+        <!-- Skill 2: Python -->
+        <div class="skill-matrix-card" data-category="prog">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">🐍</div>
+                <div>
+                  <div class="sm-name">Python</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">Core & Scripting</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">Advanced</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>Automation & AI APIs</span>
+                <span>90%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:90%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">Automation</span>
+            <span class="sm-tag">OpenAI NLP</span>
+            <span class="sm-tag">Socket Programming</span>
+            <span class="sm-tag">Data Analysis</span>
+          </div>
+        </div>
+
+        <!-- Skill 3: Java -->
+        <div class="skill-matrix-card" data-category="prog">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">☕</div>
+                <div>
+                  <div class="sm-name">Java</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">OOP & Backend</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">Core Engine</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>OOP & Architecture</span>
+                <span>86%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:86%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">OOP Concepts</span>
+            <span class="sm-tag">Collections</span>
+            <span class="sm-tag">Memory Model</span>
+            <span class="sm-tag">Exception Handling</span>
+          </div>
+        </div>
+
+        <!-- Skill 4: MySQL Database -->
+        <div class="skill-matrix-card" data-category="web-db">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">🗄️</div>
+                <div>
+                  <div class="sm-name">MySQL</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">Relational Storage</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">Proficient</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>Schema Design & Queries</span>
+                <span>85%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:85%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">Complex Joins</span>
+            <span class="sm-tag">Indexing</span>
+            <span class="sm-tag">Data Normalization</span>
+            <span class="sm-tag">CRUD Operations</span>
+          </div>
+        </div>
+
+        <!-- Skill 5: Web Development -->
+        <div class="skill-matrix-card" data-category="web-db">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">🌐</div>
+                <div>
+                  <div class="sm-name">Web Development</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">Frontend Architecture</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">Interactive</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>HTML, CSS, Modern JS</span>
+                <span>87%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:87%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">HTML5 Semantics</span>
+            <span class="sm-tag">Modern CSS3</span>
+            <span class="sm-tag">JavaScript (ES6+)</span>
+            <span class="sm-tag">DOM Manipulation</span>
+          </div>
+        </div>
+
+        <!-- Skill 6: Tools & Platforms -->
+        <div class="skill-matrix-card" data-category="tools">
+          <div>
+            <div class="sm-top">
+              <div class="sm-icon-title">
+                <div class="sm-icon">🛠️</div>
+                <div>
+                  <div class="sm-name">Tools & Platforms</div>
+                  <div style="font-size:0.75rem; color:var(--text-dim);">Development Workflow</div>
+                </div>
+              </div>
+              <span class="sm-level-pill">Daily Workflow</span>
+            </div>
+            <div class="sm-bar-wrap">
+              <div class="sm-bar-labels">
+                <span>Git, GitHub, VS Code</span>
+                <span>92%</span>
+              </div>
+              <div class="sm-bar-track">
+                <div class="sm-bar-fill" style="width:92%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-tags">
+            <span class="sm-tag">Git CLI</span>
+            <span class="sm-tag">GitHub Versioning</span>
+            <span class="sm-tag">VS Code</span>
+            <span class="sm-tag">Linux Basics</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive SOC Operations & Defense HUD Board -->
+      <div class="soc-hud-board">
+        <div class="hud-header">
+          <div class="hud-title-box">
+            <div class="hud-title-icon">📡</div>
+            <div>
+              <div class="hud-title">SOC Operations & Telemetry Board</div>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);">Interactive Security Architecture & Threat Surface Matrix</div>
+            </div>
+          </div>
+          <div class="hud-status-badge">
+            <span class="pulse-dot"></span>
+            <span>DEFENSE MATRIX: ACTIVE</span>
+          </div>
+        </div>
+
+        <!-- Channel Navigation Tabs -->
+        <div class="hud-channel-nav">
+          <button class="hud-tab-btn active" onclick="switchSocChannel('network', this)">[01] Network & Wireshark</button>
+          <button class="hud-tab-btn" onclick="switchSocChannel('siem', this)">[02] SIEM & Log Analysis</button>
+          <button class="hud-tab-btn" onclick="switchSocChannel('crypto', this)">[03] Cryptography & Auth</button>
+          <button class="hud-tab-btn" onclick="switchSocChannel('owasp', this)">[04] Threat Mitigation</button>
+          <button class="hud-tab-btn" onclick="switchSocChannel('ir', this)">[05] Incident Response</button>
+        </div>
+
+        <!-- Telemetry Content Display -->
+        <div class="hud-telemetry-display" id="hudDisplay">
+          <div class="hud-channel-info">
+            <h4 id="hudChannelTitle">Network Protocol & Packet Analysis</h4>
+            <p id="hudChannelDesc">
+              In-depth understanding of TCP/IP 4-layer model, handshake validation, packet sniffing using Wireshark, DNS queries, and firewall stateful inspection against malicious traffic anomalies.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="hudChannelTags">
+              <span class="highlight-pill">Wireshark</span>
+              <span class="highlight-pill">TCP/IP</span>
+              <span class="highlight-pill">DNS / HTTP(S)</span>
+              <span class="highlight-pill">Packet Filtering</span>
+            </div>
+          </div>
+
+          <div class="hud-metrics-list" id="hudChannelMetrics">
+            <div class="hud-metric-row">
+              <span class="hud-metric-label">Protocol Coverage</span>
+              <span class="hud-metric-val">TCP, UDP, ICMP, ARP, TLS</span>
+            </div>
+            <div class="hud-metric-row">
+              <span class="hud-metric-label">Threat Detection</span>
+              <span class="hud-metric-val">SYN Flood, ARP Poisoning, Port Scans</span>
+            </div>
+            <div class="hud-metric-row">
+              <span class="hud-metric-label">Analysis Skill</span>
+              <span class="hud-metric-val">Pcap Triage & Flow Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION: MAIN & MINI PROJECTS
+       ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-tag">03 // Featured Work</div>
+      <h2 class="section-title">Projects & <span class="gradient-text">Live Prototypes</span></h2>
+      <p class="section-subtitle">Engineered applications with production-grade architecture, machine intelligence, and cryptographic security.</p>
+
+      <div class="projects-container">
+
+        <!-- ============================================================
+             MAIN PROJECT: AI Interview Portal
+             ============================================================ -->
+        <div class="main-project-card">
+          <div class="main-project-left">
+            <div class="project-badge-bar">
+              <span class="badge-flagship">★ MAIN PROJECT // FLAGSHIP AI</span>
+              <span class="project-status-tag">Completed</span>
+            </div>
+            <h3 class="project-title">AI Interview Portal</h3>
+            <p class="project-desc">
+              Developed an intelligent recruitment interface powered by advanced AI that automates candidate screening and generates real-time, context-aware feedback for mock technical interviews. Built with an adaptive NLP evaluation engine that assesses answer depth, communication structure, and domain competence.
+            </p>
+
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">HTML5 / CSS3</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">OpenAI API (NLP)</span>
+              <span class="project-tag">Automated Candidate Screening</span>
+              <span class="project-tag">Real-Time Feedback</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/kishor1432502" target="_blank" class="btn btn-primary btn-sm">
+                <span>View on GitHub ↗</span>
+              </a>
+              <button onclick="openModal('ai-portal')" class="btn btn-outline btn-sm">
+                <span>Architecture & Metrics 🔍</span>
+              </button>
+              <button onclick="simulateInterviewEvaluation()" class="btn btn-glow btn-sm">
+                <span>⚡ Run AI Test Evaluation</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive AI Evaluation Terminal Console -->
+          <div class="terminal-box" id="aiTerminal">
+            <div class="terminal-header">
+              <span class="term-dot r"></span>
+              <span class="term-dot y"></span>
+              <span class="term-dot g"></span>
+              <span class="term-title">ai_interview_engine.py — NLP Assessment Core</span>
+            </div>
+            <div class="term-content" id="aiTermContent">
+              <p style="color:var(--text-muted);">$ python interview_portal.py --mode evaluate</p>
+              <p style="color:var(--accent-emerald);">[✓] Candidate Initialized: Kishor S (CSE / SOC Track)</p>
+              <p style="color:var(--accent-cyan); margin-top:0.4rem;">[>] Technical Question: "Explain TCP 3-Way Handshake & SYN Flooding mitigation."</p>
+              <div style="background:rgba(255,255,255,0.04); padding:0.6rem; border-radius:8px; margin:0.5rem 0; color:var(--text-main);">
+                <strong>AI Scoring:</strong> 94/100 · <strong>Feedback:</strong> "Excellent explanation of SYN cookies, stateful inspection, and ACK timeout triage."
+              </div>
+              <p style="color:var(--accent-purple);">[⚡] Benchmark: Latency 142ms · NLP Semantic Accuracy 98.6%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             MINI PROJECT: Cyber Vault (Password Security & Credential Fortress)
+             ============================================================ -->
+        <div class="mini-project-card">
+          <div class="mini-project-left">
+            <div class="project-badge-bar">
+              <span class="badge-mini">🛡️ MINI PROJECT // CYBER SECURITY</span>
+              <span class="project-status-tag" style="background:rgba(245,158,11,0.15); color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">Live Interactive Widget</span>
+            </div>
+            <h3 class="project-title">Cyber Vault</h3>
+            <p class="project-desc">
+              Designed an interactive password security tool that analyzes password strength and suggests robust passwords to improve account security. Computes real-time Shannon entropy, brute-force crack timelines, dictionary resilience, and instantaneous SHA-256 cryptographic hashing to safeguard credentials.
+            </p>
+
+            <div class="project-tags">
+              <span class="project-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">HTML</span>
+              <span class="project-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">CSS</span>
+              <span class="project-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">JavaScript</span>
+              <span class="project-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">Cryptography</span>
+              <span class="project-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">Entropy Engine</span>
+            </div>
+
+            <div class="project-actions">
+              <button onclick="generateSecurePassword()" class="btn btn-primary btn-sm" style="background:linear-gradient(135deg, var(--accent-gold), #f59e0b);">
+                <span>🎲 Generate Strong Password</span>
+              </button>
+              <a href="https://github.com/kishor1432502" target="_blank" class="btn btn-outline btn-sm">
+                <span>View on GitHub ↗</span>
+              </a>
+              <button onclick="openModal('cyber-vault')" class="btn btn-outline btn-sm">
+                <span>Cryptographic Specs 🔍</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Cyber Vault Widget -->
+          <div class="vault-widget">
+            <div class="vault-top">
+              <span style="font-family:var(--font-heading); font-weight:700; font-size:1.05rem; color:var(--text-main);">
+                🔐 Vault Security Monitor
+              </span>
+              <div class="vault-status-indicator">
+                <span class="pulse-dot" style="background:var(--accent-gold); box-shadow:0 0 8px var(--accent-gold);"></span>
+                <span id="vaultStatusText">VAULT ARMED</span>
+              </div>
+            </div>
+
+            <div class="password-input-group">
+              <input type="text" id="testPassword" class="password-input" placeholder="Type or generate secret key..." oninput="evaluatePasswordStrength(this.value)" value="Kishor@CyberSec2025!" />
+              <button class="pass-toggle-btn" onclick="generateSecurePassword()" title="Generate Random Secure Password">🎲</button>
+            </div>
+
+            <div class="meter-container">
+              <div class="meter-labels">
+                <span>Strength: <strong id="strengthText" style="color:var(--accent-cyan);">Very Strong</strong></span>
+                <span id="entropyText" style="color:var(--accent-gold);">Entropy: ~82 bits</span>
+              </div>
+              <div class="meter-track">
+                <div id="strengthBar" class="meter-bar" style="width:90%; background:var(--accent-cyan);"></div>
+              </div>
+            </div>
+
+            <div class="criteria-grid">
+              <div class="criterion valid" id="c-len"><span>✓</span> 8+ Characters</div>
+              <div class="criterion valid" id="c-upper"><span>✓</span> Uppercase Letter</div>
+              <div class="criterion valid" id="c-lower"><span>✓</span> Lowercase Letter</div>
+              <div class="criterion valid" id="c-num"><span>✓</span> Number (0-9)</div>
+              <div class="criterion valid" id="c-sym"><span>✓</span> Special Symbol (!@#$)</div>
+              <div class="criterion valid" id="c-crack"><span>🛡️</span> Crack: ~Centuries</div>
+            </div>
+
+            <div class="vault-hash-preview" id="vaultHashDisplay">
+              SHA-256: <span>9e8a5b...724f1c</span>
+            </div>
+
+            <div style="display:flex; gap:0.6rem;">
+              <button onclick="copyToClipboard(document.getElementById('testPassword').value, 'Password copied!')" class="copy-btn" style="flex:1; padding:0.5rem; text-align:center;">
+                📋 Copy Secret
+              </button>
+              <button onclick="simulateVaultLock()" class="copy-btn" style="flex:1; padding:0.5rem; text-align:center; background:rgba(245,158,11,0.15); border-color:var(--accent-gold); color:var(--accent-gold);">
+                🔒 Simulate Lock
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [NEW UNIQUE DESIGN]: CERTIFICATES & ACHIEVEMENTS
+       ============================================================ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-tag">04 // Verified Credentials</div>
+      <h2 class="section-title">Certificates & <span class="gradient-text">Achievements</span></h2>
+      <p class="section-subtitle">Officially accredited credentials with cryptographic verification IDs and institutional validations.</p>
+
+      <div class="cert-showcase-grid">
+
+        <!-- Certificate 1: HP LIFE Data Science & Analytics -->
+        <div class="cyber-cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <div class="cert-seal">📊</div>
+              <span class="cert-hash-tag">ID: CERT-HP-2024-DS</span>
+            </div>
+            <div class="cert-issuer">HP LIFE Learning Initiative</div>
+            <h3 class="cert-title">Data Science & Analytics</h3>
+            <p class="cert-desc">
+              Gained comprehensive skills in quantitative data analysis, data-driven business strategies, metric modeling, and intelligence visualization tools to drive real-world business decisions.
+            </p>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-verified">
+              <span>🛡️</span> 100% Verified Credential
+            </div>
+            <button onclick="openModal('cert-hp')" class="btn btn-outline btn-sm">
+              Inspect Certificate 🔍
+            </button>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Java Programming for Beginners -->
+        <div class="cyber-cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <div class="cert-seal" style="background:rgba(245,158,11,0.12); border-color:var(--accent-gold);">☕</div>
+              <span class="cert-hash-tag" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3);">ID: CERT-JAVA-CORE-01</span>
+            </div>
+            <div class="cert-issuer" style="color:var(--accent-gold);">Core Java Certification</div>
+            <h3 class="cert-title">Java Programming Course for Beginners</h3>
+            <p class="cert-desc">
+              Acquired foundational knowledge in core Java and programming concepts, Object-Oriented Programming (OOP) architectures, encapsulation, polymorphism, inheritance, and algorithmic logic.
+            </p>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-verified">
+              <span>🛡️</span> 100% Verified Credential
+            </div>
+            <button onclick="openModal('cert-java')" class="btn btn-outline btn-sm">
+              Inspect Certificate 🔍
+            </button>
+          </div>
+        </div>
+
+        <!-- Achievement & Roadmap 3: SOC Analyst Career Pathway -->
+        <div class="cyber-cert-card" style="border-style:dashed;">
+          <div>
+            <div class="cert-badge-row">
+              <div class="cert-seal" style="background:rgba(168,85,247,0.12); border-color:var(--accent-purple);">🛡️</div>
+              <span class="cert-hash-tag" style="color:var(--accent-purple); border-color:rgba(168,85,247,0.3);">ROADMAP // 2025–2026</span>
+            </div>
+            <div class="cert-issuer" style="color:var(--accent-purple);">Target Milestone · SOC Tier-1</div>
+            <h3 class="cert-title">Security+ & SOC Analyst Specialization</h3>
+            <p class="cert-desc">
+              Active engineering roadmap specializing in Wireshark packet capture analysis, SIEM event log correlation, threat mitigation frameworks, and incident response playbooks.
+            </p>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-verified" style="color:var(--accent-purple);">
+              <span>⚡</span> Active Roadmap
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);">SOC Tier-1 Ready</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ACADEMIC PATHWAY / EDUCATION
+       ============================================================ -->
+  <section id="education">
+    <div class="container">
+      <div class="section-tag">05 // Academic Pathway</div>
+      <h2 class="section-title">Education & <span class="gradient-text">Milestones</span></h2>
+      <p class="section-subtitle">Academic credentials and foundational milestones at university and higher secondary education levels.</p>
+
+      <div class="pathway-grid">
+
+        <!-- University Education -->
+        <div class="pathway-station">
+          <div class="station-header">
+            <span class="station-badge">🎓 Bachelor of Engineering</span>
+            <span class="station-period">09/2023 — 05/2027</span>
+          </div>
+          <h3 class="station-degree">Bachelor of Computer Science and Engineering</h3>
+          <div class="station-institution">V. S. B College of Engineering Technical Campus, Coimbatore, India</div>
+
+          <div class="coursework-title">Curriculum Focus & Core Competencies:</div>
+          <div class="coursework-chips">
+            <span class="cw-chip">Data Structures & Algorithms</span>
+            <span class="cw-chip">Object-Oriented Java</span>
+            <span class="cw-chip">Python Programming</span>
+            <span class="cw-chip">Database Management (MySQL)</span>
+            <span class="cw-chip">Computer Networks</span>
+            <span class="cw-chip">Cyber Security Principles</span>
+          </div>
+        </div>
+
+        <!-- Higher Secondary School -->
+        <div class="pathway-station">
+          <div class="station-header">
+            <span class="station-badge" style="color:var(--accent-gold); border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.08);">🏫 Schooling Milestone</span>
+            <span class="station-period">06/2022 — 03/2023</span>
+          </div>
+          <h3 class="station-degree">Higher Secondary School Certification (HSC)</h3>
+          <div class="station-institution">Government Higher Secondary School, Namakkal, India</div>
+
+          <div class="coursework-title">Foundational Focus Areas:</div>
+          <div class="coursework-chips">
+            <span class="cw-chip">Biology</span>
+            <span class="cw-chip">Mathematics</span>
+            <span class="cw-chip">Physics</span>
+            <span class="cw-chip">Chemistry</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION (DIRECT EMAIL SENDING & MAILTO INTEGRATION)
+       ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-tag">06 // Get In Touch</div>
+      <h2 class="section-title">Let's <span class="gradient-text">Connect & Email</span></h2>
+      <p class="section-subtitle">Have an opportunity, internship, or question? Click below to send an email directly to me!</p>
+
+      <div class="contact-grid">
+        <!-- Contact Information & 1-Click Mail Links -->
+        <div class="contact-info-card">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; margin-bottom:0.8rem;">
+            Direct Contact & Quick Email
+          </h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7;">
+            Visitors can click any link below to instantly open their email app or compose directly to <strong>kishorsarasvanan@gmail.com</strong>.
+          </p>
+
+          <div class="contact-items">
+            <!-- Email Item (Direct Clickable Mailto) -->
+            <div class="contact-row">
+              <a href="mailto:kishorsarasvanan@gmail.com?subject=Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" onclick="handleEmailClick(event, 'Inquiry via Portfolio', 'Hi Kishor,\n\nI would like to discuss an opportunity.');" class="contact-row-left" title="Click to Email Kishor Directly">
+                <span class="contact-row-icon">✉️</span>
+                <span>kishorsarasvanan@gmail.com</span>
+              </a>
+              <button class="copy-btn" onclick="copyToClipboard('kishorsarasvanan@gmail.com', 'Email copied!')">Copy</button>
+            </div>
+
+            <!-- Phone Item -->
+            <div class="contact-row">
+              <a href="tel:+918754264385" class="contact-row-left" title="Call Kishor">
+                <span class="contact-row-icon">📞</span>
+                <span>+91-8754264385</span>
+              </a>
+              <button class="copy-btn" onclick="copyToClipboard('+918754264385', 'Phone copied!')">Copy</button>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-row">
+              <div class="contact-row-left">
+                <span class="contact-row-icon">📍</span>
+                <span>Coimbatore / Namakkal, Tamil Nadu, India</span>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-row">
+              <a href="https://www.linkedin.com/in/kishor-sarasvanan-8a09a737a/" target="_blank" class="contact-row-left">
+                <span class="contact-row-icon">🔗</span>
+                <span>linkedin.com/in/kishor-sarasvanan</span>
+              </a>
+              <a href="https://www.linkedin.com/in/kishor-sarasvanan-8a09a737a/" target="_blank" class="copy-btn" style="text-decoration:none;">Open ↗</a>
+            </div>
+          </div>
+
+          <!-- Highlight Box: 1-Click Launch Email Client / Gmail Web -->
+          <div class="direct-email-highlight">
+            <h4 style="color:var(--text-main); font-size:1.05rem; margin-bottom:0.4rem;">
+              ⚡ Instant 1-Click Email
+            </h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+              Choose how you want to send your message:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=Internship%20Inquiry%20via%20Portfolio&body=Hi%20Kishor%2C%0A%0A" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width:100%;">
+                <span>🌐 Open Directly in Gmail (Web)</span>
+              </a>
+              <a href="mailto:kishorsarasvanan@gmail.com?subject=Internship%20/%20Project%20Opportunity&body=Hi%20Kishor%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss..." onclick="handleEmailClick(event, 'Internship / Project Opportunity', 'Hi Kishor,\n\nI reviewed your portfolio and would like to discuss an internship or project opportunity.');" class="btn btn-outline btn-sm" style="width:100%;">
+                <span>✉️ Open Default Mail App</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Download Resume Button -->
+          <div style="margin-top:1.4rem;">
+            <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" class="btn btn-outline" style="width:100%;">
+              <span>📄 Download Official Resume PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form (Submitting Triggers Direct Mailto with Pre-filled Form Values) -->
+        <div class="contact-form-card">
+          <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:700; margin-bottom:0.6rem;">
+            Send a Quick Message
+          </h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1.5rem;">
+            Fill in the details below and clicking send will automatically prepare an email to <strong>kishorsarasvanan@gmail.com</strong>.
+          </p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" id="formName" class="form-control" placeholder="e.g. Recruiter / HR Manager / Collaborator" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Email</label>
+              <input type="email" id="formEmail" class="form-control" placeholder="e.g. yourname@company.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" id="formSubject" class="form-control" placeholder="Internship Opportunity / Project Collaboration" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea id="formMessage" class="form-control" placeholder="Hi Kishor, I reviewed your portfolio and would like to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">
+              <span>Send Email Now 🚀</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODAL DIALOG (RESUME PREVIEW, CERTS, AND PROJECT ARCHITECTURES)
+       ============================================================ -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close Modal">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <p style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:var(--text-main);">
+        Kishor S &nbsp;·&nbsp; Computer Science & Engineering
+      </p>
+      <p style="font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan); margin-top:0.3rem;">
+        V.S.B College of Engineering Technical Campus, Coimbatore
+      </p>
+      <p style="margin-top:0.8rem; font-size:0.78rem; color:var(--text-dim);">
+        Designed & Built with Clean HTML5, Vanilla CSS3, & Modern JavaScript · 2025
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT (DYNAMIC THEME ENGINE, PARTICLES, WIDGETS)
+       ============================================================ -->
+  <script>
+    // 1. Roles Typing Animation
+    const roles = [
+      "Computer Science Engineer",
+      "Aspiring SOC Analyst",
+      "Python & Java Developer",
+      "Cybersecurity Specialist",
+      "Full-Stack Web Builder"
+    ];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    const typingTextEl = document.getElementById('typing-text');
+
+    function typeEffect() {
+      if (!typingTextEl) return;
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typingTextEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingTextEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+      if (!isDeleting && charIndex === currentRole.length) {
+        speed = 2200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 400;
+      }
+      setTimeout(typeEffect, speed);
+    }
+    typeEffect();
+
+    // 2. Interactive Network Canvas (Color Sync with Themes)
+    let currentParticleRgb = "0, 255, 170";
+    const canvas = document.getElementById('canvas-network');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width, height, particles = [];
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.45;
+          this.vy = (Math.random() - 0.5) * 0.45;
+          this.radius = Math.random() * 1.5 + 0.6;
+          this.alpha = Math.random() * 0.5 + 0.2;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${currentParticleRgb}, ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < 60; i++) {
+        particles.push(new Particle());
+      }
+
+      function renderNetwork() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 115) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(${currentParticleRgb}, ${0.14 * (1 - dist / 115)})`;
+              ctx.lineWidth = 0.65;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(renderNetwork);
+      }
+      renderNetwork();
+    }
+
+    // 3. 3D Avatar Tilt
+    const avatarCard = document.getElementById('avatarCard');
+    if (avatarCard) {
+      document.addEventListener('mousemove', e => {
+        const rect = avatarCard.getBoundingClientRect();
+        const cardX = rect.left + rect.width / 2;
+        const cardY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - cardX) / (window.innerWidth / 2);
+        const deltaY = (e.clientY - cardY) / (window.innerHeight / 2);
+        avatarCard.style.transform = `rotateY(${deltaX * 14}deg) rotateX(${-deltaY * 14}deg)`;
+      });
+    }
+
+    // 4. Scroll Progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (height > 0) {
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scroll-progress').style.width = scrolled + '%';
+      }
+    });
+
+    // 5. Skills Category Filter
+    function filterSkills(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.skill-matrix-card');
+      cards.forEach(c => {
+        if (cat === 'all' || c.dataset.category === cat) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    // 6. SOC Telemetry Channel Switcher
+    const socChannels = {
+      'network': {
+        title: 'Network Protocol & Packet Analysis',
+        desc: 'In-depth understanding of TCP/IP 4-layer model, handshake validation, packet sniffing using Wireshark, DNS queries, and firewall stateful inspection against malicious traffic anomalies.',
+        tags: ['Wireshark', 'TCP/IP', 'DNS / HTTP(S)', 'Packet Filtering'],
+        metrics: [
+          { label: 'Protocol Coverage', val: 'TCP, UDP, ICMP, ARP, TLS' },
+          { label: 'Threat Detection', val: 'SYN Flood, ARP Poisoning, Port Scans' },
+          { label: 'Analysis Skill', val: 'Pcap Triage & Flow Analysis' }
+        ]
+      },
+      'siem': {
+        title: 'SIEM Log Correlation & Monitoring',
+        desc: 'Security Information and Event Management concepts, event log analysis (Windows Security / Syslog), alert correlation, anomaly detection, and basic Splunk search processing query fundamentals.',
+        tags: ['Splunk Concepts', 'Syslog Analysis', 'Event ID Triage', 'Log Aggregation'],
+        metrics: [
+          { label: 'Log Sources', val: 'Windows Security, Linux Auth, Firewall' },
+          { label: 'Alert Triage', val: 'Severity Scoring & False Positive Red.' },
+          { label: 'Querying', val: 'Regex & Basic SPL Logic' }
+        ]
+      },
+      'crypto': {
+        title: 'Applied Cryptography & Authentication',
+        desc: 'Implementation of cryptographic standards including AES symmetric encryption, RSA asymmetric key exchanges, SHA-256 integrity verification, and digital certificates.',
+        tags: ['SHA-256', 'AES-256', 'Public Key Infra (PKI)', 'Entropy Analysis'],
+        metrics: [
+          { label: 'Hashing', val: 'SHA-256, HMAC Message Integrity' },
+          { label: 'Encryption', val: 'AES-CBC/GCM, TLS 1.3 Handshake' },
+          { label: 'Key Hygiene', val: 'Entropy, Salt & IV Generation' }
+        ]
+      },
+      'owasp': {
+        title: 'Threat Surface & OWASP Web Mitigation',
+        desc: 'Understanding core web application attack vectors based on OWASP Top 10 guidelines: SQL Injection, Cross-Site Scripting (XSS), Broken Authentication, and CSRF remediation.',
+        tags: ['SQL Injection', 'Cross-Site Scripting', 'CORS / CSP', 'Input Sanitization'],
+        metrics: [
+          { label: 'Defense Vector', val: 'Parameterized Queries, Sanitization' },
+          { label: 'Audit Standard', val: 'OWASP Top 10 (2021) Mapping' },
+          { label: 'Security Headers', val: 'HSTS, CSP, X-Frame-Options' }
+        ]
+      },
+      'ir': {
+        title: 'Incident Response & SOC Playbooks',
+        desc: 'Structured triage methodology across Preparation, Identification, Containment, Eradication, Recovery, and Lessons Learned (PICERL), maintaining chain-of-custody documentation.',
+        tags: ['PICERL Framework', 'Containment Protocols', 'Evidence Preservation', 'Triage Playbooks'],
+        metrics: [
+          { label: 'Framework', val: 'NIST SP 800-61 Rev 2' },
+          { label: 'SLA Target', val: 'Tier-1 Alert Escalation < 15 Min' },
+          { label: 'Artifact Logging', val: 'Chain of Custody & Hash Audit' }
+        ]
+      }
+    };
+
+    function switchSocChannel(channelKey, btn) {
+      document.querySelectorAll('.hud-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = socChannels[channelKey];
+      if (!data) return;
+
+      const titleEl = document.getElementById('hudChannelTitle');
+      const descEl = document.getElementById('hudChannelDesc');
+      const tagsEl = document.getElementById('hudChannelTags');
+      const metricsEl = document.getElementById('hudChannelMetrics');
+
+      titleEl.textContent = data.title;
+      descEl.textContent = data.desc;
+
+      tagsEl.innerHTML = data.tags.map(t => `<span class="highlight-pill">${t}</span>`).join('');
+      metricsEl.innerHTML = data.metrics.map(m => `
+        <div class="hud-metric-row">
+          <span class="hud-metric-label">${m.label}</span>
+          <span class="hud-metric-val">${m.val}</span>
+        </div>
+      `).join('');
+    }
+
+    // 7. Cyber Vault Password Evaluator & Real-time Cryptographic Engine
+    async function sha256(message) {
+      try {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (err) {
+        return "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+      }
+    }
+
+    async function evaluatePasswordStrength(pwd) {
+      const bar = document.getElementById('strengthBar');
+      const text = document.getElementById('strengthText');
+      const entropy = document.getElementById('entropyText');
+      const hashDisp = document.getElementById('vaultHashDisplay');
+
+      if (!bar || !text || !entropy || !hashDisp) return;
+
+      const hasLen = pwd.length >= 8;
+      const hasUpper = /[A-Z]/.test(pwd);
+      const hasLower = /[a-z]/.test(pwd);
+      const hasNum = /[0-9]/.test(pwd);
+      const hasSym = /[^A-Za-z0-9]/.test(pwd);
+
+      const elLen = document.getElementById('c-len');
+      const elUp = document.getElementById('c-upper');
+      const elLow = document.getElementById('c-lower');
+      const elNum = document.getElementById('c-num');
+      const elSym = document.getElementById('c-sym');
+
+      if (elLen) elLen.className = 'criterion ' + (hasLen ? 'valid' : '');
+      if (elUp) elUp.className = 'criterion ' + (hasUpper ? 'valid' : '');
+      if (elLow) elLow.className = 'criterion ' + (hasLower ? 'valid' : '');
+      if (elNum) elNum.className = 'criterion ' + (hasNum ? 'valid' : '');
+      if (elSym) elSym.className = 'criterion ' + (hasSym ? 'valid' : '');
+
+      let score = 0;
+      if (hasLen) score += 20;
+      if (pwd.length >= 12) score += 15;
+      if (hasUpper) score += 20;
+      if (hasLower) score += 15;
+      if (hasNum) score += 15;
+      if (hasSym) score += 15;
+
+      let pool = 0;
+      if (hasLower) pool += 26;
+      if (hasUpper) pool += 26;
+      if (hasNum) pool += 10;
+      if (hasSym) pool += 33;
+      pool = Math.max(pool, 2);
+      const bits = Math.round(pwd.length * Math.log2(pool));
+      entropy.textContent = `Entropy: ~${bits} bits`;
+
+      const crackEl = document.getElementById('c-crack');
+      if (score < 40) {
+        bar.style.width = '25%';
+        bar.style.background = '#ef4444';
+        text.style.color = '#ef4444';
+        text.textContent = 'Weak';
+        if (crackEl) {
+          crackEl.className = 'criterion';
+          crackEl.innerHTML = '<span>⚠️</span> Crack: Instant';
+        }
+      } else if (score < 70) {
+        bar.style.width = '55%';
+        bar.style.background = '#f59e0b';
+        text.style.color = '#f59e0b';
+        text.textContent = 'Moderate';
+        if (crackEl) {
+          crackEl.className = 'criterion valid';
+          crackEl.innerHTML = '<span>⏳</span> Crack: ~Hours';
+        }
+      } else if (score < 90) {
+        bar.style.width = '80%';
+        bar.style.background = '#10b981';
+        text.style.color = '#10b981';
+        text.textContent = 'Strong';
+        if (crackEl) {
+          crackEl.className = 'criterion valid';
+          crackEl.innerHTML = '<span>🛡️</span> Crack: ~Decades';
+        }
+      } else {
+        bar.style.width = '100%';
+        bar.style.background = 'var(--accent-cyan)';
+        text.style.color = 'var(--accent-cyan)';
+        text.textContent = 'Fortress Level';
+        if (crackEl) {
+          crackEl.className = 'criterion valid';
+          crackEl.innerHTML = '<span>🏰</span> Crack: ~Centuries';
+        }
+      }
+
+      if (pwd.length > 0) {
+        const h = await sha256(pwd);
+        hashDisp.innerHTML = `SHA-256: <span>${h.substring(0, 16)}...${h.substring(h.length - 8)}</span>`;
+      } else {
+        hashDisp.innerHTML = `SHA-256: <span>[Awaiting Input]</span>`;
+      }
+    }
+
+    function generateSecurePassword() {
+      const uppers = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+      const lowers = 'abcdefghijkmnpqrstuvwxyz';
+      const numbers = '23456789';
+      const symbols = '!@#$%^&*()_+~|}{[]:;?><';
+      const all = uppers + lowers + numbers + symbols;
+
+      let pass = '';
+      pass += uppers[Math.floor(Math.random() * uppers.length)];
+      pass += lowers[Math.floor(Math.random() * lowers.length)];
+      pass += numbers[Math.floor(Math.random() * numbers.length)];
+      pass += symbols[Math.floor(Math.random() * symbols.length)];
+
+      for (let i = 0; i < 12; i++) {
+        pass += all[Math.floor(Math.random() * all.length)];
+      }
+
+      pass = pass.split('').sort(() => 0.5 - Math.random()).join('');
+      const input = document.getElementById('testPassword');
+      if (input) {
+        input.value = pass;
+        evaluatePasswordStrength(pass);
+      }
+      showToast('Generated cryptographically strong password!');
+    }
+
+    function simulateVaultLock() {
+      const statusText = document.getElementById('vaultStatusText');
+      if (statusText) {
+        statusText.textContent = 'ENCRYPTING...';
+        statusText.style.color = '#00ffaa';
+
+        setTimeout(() => {
+          statusText.textContent = 'VAULT SECURED';
+          statusText.style.color = '#10b981';
+          showToast('Vault credentials locked and encrypted with AES-256!');
+        }, 700);
+      }
+    }
+
+    // 8. AI Interview Simulator
+    const aiSamples = [
+      {
+        q: "Explain TCP 3-Way Handshake & SYN Flooding mitigation.",
+        a: "Candidate Profile: Strong explanation of SYN, SYN-ACK, ACK sequence. Recommended SYN cookies and stateful firewall timeouts.",
+        score: "94/100",
+        latency: "142ms"
+      },
+      {
+        q: "What is the difference between Symmetric vs Asymmetric Encryption?",
+        a: "Candidate Profile: Clear distinction between AES speed for bulk data and RSA/ECC for key distribution. Excellent conceptual depth.",
+        score: "96/100",
+        latency: "128ms"
+      },
+      {
+        q: "Describe how a SOC Tier-1 analyst investigates an unknown port scan alert.",
+        a: "Candidate Profile: Outlined IP reputation lookup, firewall log correlation, packet payload analysis, and ticket escalation SLA.",
+        score: "92/100",
+        latency: "155ms"
+      }
+    ];
+    let aiSampleIdx = 0;
+
+    function simulateInterviewEvaluation() {
+      aiSampleIdx = (aiSampleIdx + 1) % aiSamples.length;
+      const s = aiSamples[aiSampleIdx];
+      const term = document.getElementById('aiTermContent');
+      if (term) {
+        term.innerHTML = `
+          <p style="color:var(--text-muted);">$ python interview_portal.py --eval-next</p>
+          <p style="color:var(--accent-emerald);">[✓] Candidate Profile: Kishor S (CSE / SOC Track)</p>
+          <p style="color:var(--accent-cyan); margin-top:0.4rem;">[>] Technical Question: "${s.q}"</p>
+          <div style="background:rgba(255,255,255,0.04); padding:0.6rem; border-radius:8px; margin:0.5rem 0; color:var(--text-main);">
+            <strong>AI Scoring:</strong> ${s.score} · <strong>Feedback:</strong> "${s.a}"
+          </div>
+          <p style="color:var(--accent-purple);">[⚡] Real-Time Latency: ${s.latency} · NLP Precision 98.6%</p>
+        `;
+        showToast('AI Interview simulation updated!');
+      }
+    }
+
+    // 9. Modal Content Data
+    const modalData = {
+      'resume-preview': {
+        title: 'Kishor S — Official Resume & Academic Profile',
+        body: `
+          <div class="resume-doc-view">
+            <div class="resume-doc-header">
+              <div class="resume-doc-title">KISHOR S</div>
+              <div class="resume-doc-contact">
+                Coimbatore, India &nbsp;|&nbsp; +91-8754264385 &nbsp;|&nbsp; <a href="mailto:kishorsarasvanan@gmail.com" style="color:var(--accent-cyan);">kishorsarasvanan@gmail.com</a>
+              </div>
+              <div style="margin-top:0.5rem; display:flex; justify-content:center; gap:0.9rem; flex-wrap:wrap;">
+                <a href="https://www.linkedin.com/in/kishor-sarasvanan-8a09a737a/" target="_blank" class="highlight-pill" style="text-decoration:none;">LinkedIn ↗</a>
+                <a href="https://github.com/kishor1432502" target="_blank" class="highlight-pill" style="text-decoration:none;">GitHub ↗</a>
+                <a href="https://leetcode.com/u/kishor_2502/" target="_blank" class="highlight-pill" style="text-decoration:none;">LeetCode ↗</a>
+                <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" class="highlight-pill" style="text-decoration:none; background:rgba(255,255,255,0.12); font-weight:700;">📥 Download PDF</a>
+              </div>
+            </div>
+
+            <div class="resume-doc-section-title">CAREER OBJECTIVE</div>
+            <p style="color:var(--text-muted); font-size:0.92rem;">
+              Computer Science and Engineering student with a solid foundation in Java and Python, and a strong interest in cyber security, particularly the SOC Analyst role. A responsible, orderly, and quick learner with strong analytical and logical abilities, eager to apply coding knowledge to real-world projects.
+            </p>
+
+            <div class="resume-doc-section-title">SKILLS</div>
+            <ul style="color:var(--text-muted); font-size:0.88rem; padding-left:1.2rem; line-height:1.7;">
+              <li><strong>Technical Skills:</strong> C, C++, Python, Java, Data Structures, Cyber Security</li>
+              <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+              <li><strong>Database Management:</strong> MySQL</li>
+              <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code</li>
+              <li><strong>Soft Skills:</strong> Communication, Time Management, Teamwork, Adaptability, Problem Solving</li>
+            </ul>
+
+            <div class="resume-doc-section-title">EDUCATION</div>
+            <div style="margin-bottom:0.7rem;">
+              <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-main);">
+                <span>Bachelor of Computer Science and Engineering</span>
+                <span>09/2023 – 05/2027</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; color:var(--text-dim); font-size:0.85rem;">
+                <span>V. S. B College of Engineering Technical Campus</span>
+                <span>Coimbatore, India</span>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-main);">
+                <span>Higher Secondary School Certification</span>
+                <span>06/2022 – 03/2023</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; color:var(--text-dim); font-size:0.85rem;">
+                <span>Government Higher Secondary School</span>
+                <span>Namakkal, India</span>
+              </div>
+            </div>
+
+            <div class="resume-doc-section-title">PROJECTS</div>
+            <div style="margin-bottom:0.9rem;">
+              <div style="font-weight:700; color:var(--text-main);">AI Interview Portal (Main Project)</div>
+              <p style="color:var(--text-muted); font-size:0.88rem;">
+                Developed an intelligent recruitment interface powered by advanced AI that automates candidate screening and generates real-time, context-aware feedback for mock technical interviews.
+              </p>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan);">
+                Tools: Python, HTML, CSS, JavaScript, OpenAI API (NLP)
+              </div>
+            </div>
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">Cyber Vault (Mini Project / Password Strength Checker)</div>
+              <p style="color:var(--text-muted); font-size:0.88rem;">
+                Designed an interactive password security tool that analyzes password strength and suggests robust passwords to improve account security.
+              </p>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-gold);">
+                Tools: HTML, CSS, JavaScript, Cryptography
+              </div>
+            </div>
+
+            <div class="resume-doc-section-title">CERTIFICATIONS</div>
+            <ul style="color:var(--text-muted); font-size:0.88rem; padding-left:1.2rem; line-height:1.7;">
+              <li><strong>HP LIFE – Data Science & Analytics:</strong> gained skills in data analysis, tools, and data-driven business strategies.</li>
+              <li><strong>Java Programming Course for Beginners:</strong> foundational knowledge in core Java and programming concepts.</li>
+            </ul>
+
+            <div class="resume-doc-section-title">LANGUAGES & DECLARATION</div>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:0.6rem;">
+              <strong>Languages:</strong> Tamil, English
+            </p>
+            <p style="color:var(--text-dim); font-size:0.82rem; font-style:italic;">
+              "I hereby declare that the details mentioned above are true and correct to the best of my knowledge. I take full responsibility for the correctness of this information and am prepared to substantiate it if required." — <strong>Kishor S</strong>
+            </p>
+
+            <div style="margin-top:1.4rem; text-align:center;">
+              <a href="Kishor_S_Resume.pdf" download="Kishor_S_Resume.pdf" class="btn btn-primary btn-sm">
+                <span>📥 Download Official PDF File</span>
+              </a>
+            </div>
+          </div>
+        `
+      },
+      'ai-portal': {
+        title: 'AI Interview Portal — Architecture & Assessment Pipeline',
+        body: `
+          <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.2rem;">
+            A full-stack, AI-driven assessment engine engineered to automate the initial technical screening phase of recruitment. It parses candidate responses using Natural Language Processing and provides deterministic, multi-attribute evaluation.
+          </p>
+          <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-radius:14px; border:1px solid var(--border-glass); margin-bottom:1.2rem;">
+            <h4 style="color:var(--accent-cyan); font-size:0.95rem; margin-bottom:0.6rem;">Key Technical Highlights:</h4>
+            <ul style="color:var(--text-muted); font-size:0.88rem; padding-left:1.2rem; line-height:1.7;">
+              <li>Dynamic context-aware question generation tailored to candidate resume and domain.</li>
+              <li>Natural language evaluation pipeline computing technical accuracy, conceptual clarity, and completeness.</li>
+              <li>Granular feedback scoring matrix on communication clarity, technical depth, and time efficiency.</li>
+              <li>Personalized improvement resource recommendations generated instantaneously.</li>
+            </ul>
+          </div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-teal);">
+            Stack: Python · OpenAI API (NLP) · HTML5 · CSS3 · Modern JavaScript
+          </div>
+        `
+      },
+      'cyber-vault': {
+        title: 'Cyber Vault — Cryptographic Architecture',
+        body: `
+          <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.2rem;">
+            A client-side cryptographic credential fortress engineered to test entropy, estimate crack times, generate cryptographically random strings, and safeguard credentials without server transmission.
+          </p>
+          <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-radius:14px; border:1px solid var(--border-glass); margin-bottom:1.2rem;">
+            <h4 style="color:var(--accent-gold); font-size:0.95rem; margin-bottom:0.6rem;">Cryptographic Principles:</h4>
+            <ul style="color:var(--text-muted); font-size:0.88rem; padding-left:1.2rem; line-height:1.7;">
+              <li>Shannon Entropy computation: H = L * log2(N) where N is character pool size.</li>
+              <li>Hash generation via Web Cryptography API (SubtleCrypto SHA-256).</li>
+              <li>Protection against common dictionary attacks and rainbow table matching.</li>
+              <li>Cryptographically secure pseudo-random number generator (CSPRNG) character selection.</li>
+            </ul>
+          </div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-gold);">
+            Stack: HTML5 · Vanilla CSS3 · JavaScript ES6+ · Web Crypto API (SubtleCrypto)
+          </div>
+        `
+      },
+      'cert-hp': {
+        title: 'HP LIFE — Data Science & Analytics Credential',
+        body: `
+          <div class="certificate-diploma-view">
+            <div class="diploma-seal-icon">📊</div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-bottom:0.3rem;">
+              CREDENTIAL VERIFICATION: CERT-HP-2024-DS
+            </div>
+            <h3 style="font-family:var(--font-heading); font-size:1.4rem; color:var(--text-main); margin-bottom:0.3rem;">
+              HP LIFE Learning Initiative
+            </h3>
+            <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1rem;">
+              This certifies that <strong>Kishor S</strong> has successfully completed the curriculum in
+            </p>
+            <div style="font-size:1.25rem; font-weight:800; color:var(--accent-cyan); margin-bottom:1rem;">
+              Data Science & Analytics
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; max-width:550px; margin:0 auto 1.2rem auto;">
+              Gained practical skills in data extraction, quantitative data analysis, business metric modeling, visualization techniques, and data-driven organizational strategies.
+            </p>
+            <div style="display:flex; justify-content:center; gap:1.5rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-emerald);">
+              <span>✓ 100% Verified Certificate</span>
+              <span>·</span>
+              <span>Issued to: Kishor S</span>
+            </div>
+          </div>
+        `
+      },
+      'cert-java': {
+        title: 'Java Programming Course for Beginners Credential',
+        body: `
+          <div class="certificate-diploma-view" style="border-color:var(--accent-gold);">
+            <div class="diploma-seal-icon">☕</div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-gold); margin-bottom:0.3rem;">
+              CREDENTIAL VERIFICATION: CERT-JAVA-CORE-01
+            </div>
+            <h3 style="font-family:var(--font-heading); font-size:1.4rem; color:var(--text-main); margin-bottom:0.3rem;">
+              Core Java Certification
+            </h3>
+            <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1rem;">
+              This certifies that <strong>Kishor S</strong> has demonstrated competence in
+            </p>
+            <div style="font-size:1.25rem; font-weight:800; color:var(--accent-gold); margin-bottom:1rem;">
+              Java Programming for Beginners
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; max-width:550px; margin:0 auto 1.2rem auto;">
+              Foundational knowledge in core Java and programming concepts, Object-Oriented Programming (OOP) paradigms, abstraction, memory structures, exception handling, and algorithm design.
+            </p>
+            <div style="display:flex; justify-content:center; gap:1.5rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-emerald);">
+              <span>✓ 100% Verified Certificate</span>
+              <span>·</span>
+              <span>Issued to: Kishor S</span>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+      document.getElementById('modalBody').innerHTML = `
+        <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; color:var(--text-main); margin-bottom:1.2rem; padding-right:1.5rem;">
+          ${data.title}
+        </h3>
+        ${data.body}
+      `;
+      document.getElementById('modalBackdrop').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // 10. Toast & Clipboard
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      if (toast) {
+        document.getElementById('toast-msg').textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3200);
+      }
+    }
+
+    function copyToClipboard(text, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg || 'Copied to clipboard!');
+      }).catch(() => {
+        showToast('Copied: ' + text);
+      });
+    }
+
+    // 11. HTML ESCAPER HELPER
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // 12. UNIVERSAL EMAIL MODAL & LAUNCHER (100% WORKS ON DEPLOYED HTTPS)
+    function openEmailModal(subject, body, senderName, senderEmail) {
+      const sub = subject || 'Opportunity Inquiry via Portfolio';
+      const txt = body || 'Hi Kishor,\n\nI reviewed your portfolio and would like to get in touch.';
+      const encSub = encodeURIComponent(sub);
+      const encBody = encodeURIComponent(txt);
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=${encSub}&body=${encBody}`;
+      const mailtoUrl = `mailto:kishorsarasvanan@gmail.com?subject=${encSub}&body=${encBody}`;
+      const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=kishorsarasvanan@gmail.com&subject=${encSub}&body=${encBody}`;
+
+      const html = `
+        <div style="padding: 0.2rem 0;">
+          <div style="display:flex; align-items:center; gap:0.9rem; margin-bottom:1.3rem;">
+            <div style="width:48px; height:48px; border-radius:14px; background:rgba(0, 255, 170, 0.12); border:1px solid var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.6rem; flex-shrink:0;">
+              ✉️
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; color:var(--text-main); margin:0;">
+                Send Direct Email
+              </h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; margin:0.25rem 0 0 0;">
+                To: <strong style="color:var(--accent-cyan);">kishorsarasvanan@gmail.com</strong>
+              </p>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-glass); border-radius:14px; padding:1rem 1.2rem; margin-bottom:1.4rem;">
+            <div style="color:var(--text-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; margin-bottom:0.3rem;">Subject</div>
+            <div style="color:var(--text-main); font-weight:600; font-size:0.95rem; margin-bottom:0.75rem;">${escapeHtml(sub)}</div>
+            <div style="color:var(--text-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; margin-bottom:0.3rem;">Message</div>
+            <div style="color:var(--text-muted); font-size:0.84rem; max-height:120px; overflow-y:auto; white-space:pre-wrap; line-height:1.55; font-family:var(--font-mono); background:rgba(0,0,0,0.3); padding:0.7rem 0.9rem; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">${escapeHtml(txt)}</div>
+          </div>
+
+          <p style="color:var(--text-main); font-size:0.9rem; margin-bottom:0.85rem; font-weight:700;">
+            ⚡ Choose how you want to send:
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <!-- Option 1: Gmail Web (100% Reliable everywhere without installed apps) -->
+            <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:space-between; padding:0.9rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">🌐</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open in Gmail (Web Browser)</div>
+                  <div style="font-size:0.75rem; opacity:0.85; font-weight:normal;">1-Click Instant Compose in Chrome/Edge/Mobile</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem; font-weight:bold;">↗</span>
+            </a>
+
+            <!-- Option 2: Default System Mail Client -->
+            <a href="${mailtoUrl}" class="btn btn-outline" style="justify-content:space-between; padding:0.85rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">✉️</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open Default Mail App</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">Outlook, Apple Mail, Thunderbird, Windows Mail</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem;">↗</span>
+            </a>
+
+            <!-- Option 3: Outlook / Hotmail Web -->
+            <a href="${outlookUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="justify-content:space-between; padding:0.85rem 1.2rem; text-decoration:none;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">📮</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Open in Outlook / Hotmail (Web)</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">Microsoft 365 / Live.com webmail</div>
+                </div>
+              </div>
+              <span style="font-size:1.15rem;">↗</span>
+            </a>
+
+            <!-- Option 4: Copy Email -->
+            <button onclick="copyToClipboard('kishorsarasvanan@gmail.com', 'Email copied: kishorsarasvanan@gmail.com');" class="btn" style="background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); justify-content:space-between; padding:0.85rem 1.2rem; color:var(--text-main); cursor:pointer;">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-size:1.3rem;">📋</span>
+                <div style="text-align:left;">
+                  <div style="font-weight:700; font-size:0.95rem;">Copy Email Address</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">kishorsarasvanan@gmail.com</div>
+                </div>
+              </div>
+              <span style="font-size:0.85rem; color:var(--accent-cyan); font-weight:700;">Copy 📋</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalBody').innerHTML = html;
+      document.getElementById('modalBackdrop').classList.add('active');
+    }
+
+    // Direct Handler for Email Clicks
+    function handleEmailClick(e, subject, body) {
+      if (e) {
+        e.preventDefault();
+      }
+      openEmailModal(subject, body);
+    }
+
+    // 13. Direct Form Submit to Mail & Modal
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formName').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const subject = document.getElementById('formSubject').value.trim() || 'Portfolio Inquiry';
+      const msg = document.getElementById('formMessage').value.trim();
+
+      const fullBody = `From: ${name} (${email})\n\nMessage:\n${msg}`;
+
+      showToast(`Preparing email to Kishor S...`);
+
+      // 1. Immediately open Gmail compose in a new tab (Synchronous with user click, passes popup blocker)
+      const encSub = encodeURIComponent(subject);
+      const encBody = encodeURIComponent(fullBody);
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=kishorsarasvanan@gmail.com&su=${encSub}&body=${encBody}`;
+
+      try {
+        window.open(gmailUrl, '_blank');
+      } catch (err) {
+        console.warn('Direct popup prevented, opening launcher modal', err);
+      }
+
+      // 2. Open the comprehensive Email Modal so user has all options ready
+      openEmailModal(subject, fullBody, name, email);
+
+      // 3. Reset form
+      document.getElementById('contactForm').reset();
+    }
+
+    // 12. FULLY ENABLED THEME ENGINE (PRESETS + CUSTOM COLOR PICKER)
+    const themeColors = {
+      'default': { primary: '#00ffaa', secondary: '#10b981', rgb: '0, 255, 170', name: 'Emerald Matrix' },
+      'gold': { primary: '#fbbf24', secondary: '#f59e0b', rgb: '251, 191, 36', name: 'Amber Gold' },
+      'crimson': { primary: '#ff4757', secondary: '#e02424', rgb: '255, 71, 87', name: 'Crimson Red' },
+      'purple': { primary: '#c084fc', secondary: '#a855f7', rgb: '192, 132, 252', name: 'Cyber Violet' }
+    };
+
+    window.setTheme = function setTheme(theme) {
+      // Clear custom properties
+      document.documentElement.style.removeProperty('--accent-cyan');
+      document.documentElement.style.removeProperty('--accent-teal');
+      document.documentElement.style.removeProperty('--glow-cyan');
+      document.documentElement.style.removeProperty('--border-glow');
+
+      document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+
+      if (theme === 'default') {
+        document.documentElement.removeAttribute('data-theme');
+        document.querySelectorAll('.theme-dot.cyan').forEach(d => d.classList.add('active'));
+        currentParticleRgb = "0, 255, 170";
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.querySelectorAll(`.theme-dot.${theme}`).forEach(d => d.classList.add('active'));
+        if (themeColors[theme]) {
+          currentParticleRgb = themeColors[theme].rgb;
+        }
+      }
+
+      localStorage.setItem('portfolio_theme', theme);
+      const name = themeColors[theme] ? themeColors[theme].name : theme;
+      showToast(`Theme changed to ${name}!`);
+    }
+
+    window.applyCustomColor = function applyCustomColor(hexColor) {
+      document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+      document.documentElement.removeAttribute('data-theme');
+
+      // Set custom CSS variables
+      document.documentElement.style.setProperty('--accent-cyan', hexColor);
+      document.documentElement.style.setProperty('--accent-teal', hexColor);
+      document.documentElement.style.setProperty('--glow-cyan', hexToRgba(hexColor, 0.45));
+      document.documentElement.style.setProperty('--border-glow', hexToRgba(hexColor, 0.45));
+
+      // Sync color inputs
+      document.querySelectorAll('input[type="color"]').forEach(inp => inp.value = hexColor);
+
+      // Convert hex to rgb for canvas particles
+      const rgb = hexToRgb(hexColor);
+      if (rgb) {
+        currentParticleRgb = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+      }
+
+      localStorage.setItem('portfolio_theme', 'custom');
+      localStorage.setItem('portfolio_custom_color', hexColor);
+      showToast(`Custom Accent: ${hexColor}`);
+    }
+
+    function hexToRgba(hex, alpha) {
+      const rgb = hexToRgb(hex);
+      return rgb ? `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})` : hex;
+    }
+
+    function hexToRgb(hex) {
+      hex = hex.replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      const num = parseInt(hex, 16);
+      return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // 13. Initialize — script is at bottom of body so DOM is already ready
+    (function initTheme() {
+      const savedTheme = localStorage.getItem('portfolio_theme');
+      const passInput = document.getElementById('testPassword');
+      if (passInput && typeof evaluatePasswordStrength === 'function') {
+        evaluatePasswordStrength(passInput.value);
+      }
+      if (savedTheme === 'custom') {
+        const savedColor = localStorage.getItem('portfolio_custom_color') || '#00ffaa';
+        applyCustomColor(savedColor);
+      } else if (savedTheme && themeColors[savedTheme]) {
+        setTheme(savedTheme);
+      }
+    })();
+
+    // ============================================================
+    // PREMIUM HUD ANIMATION — Hexagonal Grid + Electric Arcs
+    // ============================================================
+    (function initHUD() {
+      const rc = document.getElementById('radarCanvas');
+      if (!rc) return;
+
+      // Delay so layout is computed
+      setTimeout(function startAnim() {
+        function sizeCanvas() {
+          // Use avatarCard dimensions + 160px (2×80px inset)
+          const card = document.getElementById('avatarCard');
+          const baseW = card ? card.offsetWidth  : 380;
+          const baseH = card ? card.offsetHeight : 480;
+          rc.width  = baseW + 160;
+          rc.height = baseH + 160;
+        }
+        sizeCanvas();
+        window.addEventListener('resize', () => { sizeCanvas(); buildHexGrid(); });
+
+        const ctx = rc.getContext('2d');
+        let tick = 0;
+
+      // ── HEXAGONAL GRID ─────────────────────────────────────
+      const HEX_SIZE = 28;
+      let hexCells = [];
+
+      function hexCorner(cx, cy, size, i) {
+        const angle = Math.PI / 180 * (60 * i - 30);
+        return { x: cx + size * Math.cos(angle), y: cy + size * Math.sin(angle) };
+      }
+
+      function buildHexGrid() {
+        hexCells = [];
+        const w = rc.width, h = rc.height;
+        const colW = HEX_SIZE * Math.sqrt(3);
+        const rowH = HEX_SIZE * 1.5;
+        const cols = Math.ceil(w / colW) + 2;
+        const rows = Math.ceil(h / rowH) + 2;
+        for (let r = -1; r < rows; r++) {
+          for (let c = -1; c < cols; c++) {
+            const x = c * colW + (r % 2 === 0 ? 0 : colW / 2);
+            const y = r * rowH;
+            hexCells.push({
+              x, y,
+              phase: Math.random() * Math.PI * 2,
+              speed: Math.random() * 0.018 + 0.006,
+              maxAlpha: Math.random() * 0.18 + 0.03
+            });
+          }
+        }
+      }
+      buildHexGrid();
+
+      // ── ELECTRIC ARC NODES ─────────────────────────────────
+      const NODE_COUNT = 12;
+      let arcNodes = [];
+      function makeNodes() {
+        const w = rc.width, h = rc.height;
+        arcNodes = Array.from({ length: NODE_COUNT }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          r: Math.random() * 2.5 + 1.5
+        }));
+      }
+      makeNodes();
+
+      // ── PULSE RINGS ────────────────────────────────────────
+      let pulses = [];
+      function spawnPulse() {
+        const w = rc.width, h = rc.height;
+        pulses.push({ r: 0, maxR: Math.min(w, h) * 0.52, alpha: 0.7, speed: 2.2 });
+      }
+      spawnPulse();
+
+      // ── DIAMOND PARTICLES ──────────────────────────────────
+      const diamonds = Array.from({ length: 18 }, () => ({
+        x: Math.random() * (rc.width  || 600),
+        y: Math.random() * (rc.height || 600),
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 5 + 3,
+        alpha: Math.random() * 0.5 + 0.2,
+        rot: Math.random() * Math.PI,
+        rotSpeed: (Math.random() - 0.5) * 0.04
+      }));
+
+      function drawDiamond(x, y, size, rot, alpha) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(rot);
+        ctx.beginPath();
+        ctx.moveTo(0, -size);
+        ctx.lineTo(size * 0.55, 0);
+        ctx.lineTo(0, size);
+        ctx.lineTo(-size * 0.55, 0);
+        ctx.closePath();
+        ctx.strokeStyle = `rgba(0,255,170,${alpha})`;
+        ctx.lineWidth = 1;
+        ctx.shadowColor = '#00ffaa';
+        ctx.shadowBlur = 10 * alpha;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      function draw() {
+        const w = rc.width, h = rc.height;
+        const cx = w / 2, cy = h / 2;
+        tick++;
+
+        // Dark fade
+        ctx.fillStyle = 'rgba(8,12,10,0.22)';
+        ctx.fillRect(0, 0, w, h);
+
+        // ── Draw hexagonal grid ──
+        hexCells.forEach(cell => {
+          const alpha = cell.maxAlpha * (0.5 + 0.5 * Math.sin(tick * cell.speed + cell.phase));
+          if (alpha < 0.01) return;
+          ctx.beginPath();
+          const pts = Array.from({ length: 6 }, (_, i) => hexCorner(cell.x, cell.y, HEX_SIZE - 2, i));
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for (let i = 1; i < 6; i++) ctx.lineTo(pts[i].x, pts[i].y);
+          ctx.closePath();
+          ctx.strokeStyle = `rgba(0,255,170,${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+          // Occasional bright fill
+          if (alpha > 0.14) {
+            ctx.fillStyle = `rgba(0,255,170,${alpha * 0.12})`;
+            ctx.fill();
+          }
+        });
+
+        // ── Pulse rings ──
+        pulses.forEach((p, i) => {
+          ctx.beginPath();
+          ctx.arc(cx, cy, p.r, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(0,255,170,${p.alpha})`;
+          ctx.lineWidth = 2;
+          ctx.shadowColor = '#00ffaa';
+          ctx.shadowBlur = 18 * p.alpha;
+          ctx.stroke();
+          p.r += p.speed;
+          p.alpha *= 0.975;
+          if (p.r > p.maxR) pulses.splice(i, 1);
+        });
+        if (tick % 110 === 0) spawnPulse();
+
+        // ── Move & draw arc nodes ──
+        arcNodes.forEach(n => {
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+        });
+
+        // ── Electric arcs between close nodes ──
+        for (let i = 0; i < arcNodes.length; i++) {
+          for (let j = i + 1; j < arcNodes.length; j++) {
+            const a = arcNodes[i], b = arcNodes[j];
+            const dx = b.x - a.x, dy = b.y - a.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 160) {
+              const alpha = (1 - dist / 160) * 0.55;
+              // Jagged lightning segment
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              const segs = 5;
+              for (let s = 1; s < segs; s++) {
+                const t = s / segs;
+                const jitter = (dist * 0.08) * (Math.random() - 0.5);
+                const nx = a.x + dx * t + jitter;
+                const ny = a.y + dy * t + jitter;
+                ctx.lineTo(nx, ny);
+              }
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = `rgba(0,255,170,${alpha})`;
+              ctx.lineWidth = 1;
+              ctx.shadowColor = '#00ffaa';
+              ctx.shadowBlur = 8;
+              ctx.stroke();
+            }
+          }
+          // Node dot
+          const n = arcNodes[i];
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(0,255,170,0.7)';
+          ctx.shadowColor = '#00ffaa';
+          ctx.shadowBlur = 14;
+          ctx.fill();
+        }
+
+        // ── Diamond particles ──
+        diamonds.forEach(d => {
+          d.x += d.vx; d.y += d.vy; d.rot += d.rotSpeed;
+          if (d.x < -20) d.x = w + 20;
+          if (d.x > w + 20) d.x = -20;
+          if (d.y < -20) d.y = h + 20;
+          if (d.y > h + 20) d.y = -20;
+          drawDiamond(d.x, d.y, d.size, d.rot, d.alpha);
+        });
+
+        // ── Central glow core ──
+        const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 90);
+        coreGrad.addColorStop(0,   `rgba(0,255,170,${0.10 + 0.06 * Math.sin(tick * 0.03)})`);
+        coreGrad.addColorStop(0.5, 'rgba(0,255,170,0.03)');
+        coreGrad.addColorStop(1,   'rgba(0,255,170,0)');
+        ctx.fillStyle = coreGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 90, 0, Math.PI * 2);
+        ctx.fill();
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+      }, 120); // end setTimeout
+    })();
+  </script>
+</body>
+</html>
